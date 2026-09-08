@@ -1,8 +1,11 @@
-[gd_scene format=3 uid="uid://clwhp0f2cehhg"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://scenes/test_area.tscn" id="1_test_area"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="2_player"]
 
-[node name="Main" type="Node" unique_id=1060793224]
+[node name="Main" type="Node"]
 
-[node name="Player" parent="." unique_id=31301156 instance=ExtResource("1_player")]
+[node name="TestArea" parent="." instance=ExtResource("1_test_area")]
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
 position = Vector2(320, 180)
