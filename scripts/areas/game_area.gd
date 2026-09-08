@@ -1,10 +1,21 @@
 class_name GameArea
 extends Node2D
 
+signal area_change_requested(target_area_path: String, target_spawn_id: StringName)
+
 @export var camera_bounds: Rect2i = Rect2i(0, 0, 640, 360)
 @export var default_spawn_id: StringName = &"default"
 
 @onready var spawn_points := get_node_or_null(^"SpawnPoints") as Node2D
+@onready var transitions := get_node_or_null(^"Transitions") as Node2D
+
+func _ready() -> void:
+	if transitions == null:
+		return
+
+	for child in transitions.get_children():
+		if child is AreaTransition:
+			child.transition_requested.connect(_on_transition_requested)
 
 func get_camera_bounds() -> Rect2i:
 	return camera_bounds
@@ -22,3 +33,6 @@ func get_spawn_point(requested_id: StringName = &"") -> AreaSpawnPoint:
 
 	push_error("Spawnpunkt '%s' wurde im Areal '%s' nicht gefunden." % [target_id, name])
 	return null
+
+func _on_transition_requested(target_area_path: String, target_spawn_id: StringName) -> void:
+	area_change_requested.emit(target_area_path, target_spawn_id)

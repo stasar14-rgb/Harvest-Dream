@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://scripts/areas/game_area.gd" id="1_area"]
 [ext_resource type="PackedScene" path="res://scenes/areas/spawn_point.tscn" id="2_spawn_point"]
+[ext_resource type="PackedScene" path="res://scenes/areas/area_transition.tscn" id="3_transition"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_horizontal"]
 size = Vector2(1280, 16)
@@ -18,9 +19,37 @@ camera_bounds = Rect2i(0, 0, 1280, 720)
 [node name="DefaultSpawn" parent="SpawnPoints" instance=ExtResource("2_spawn_point")]
 position = Vector2(320, 180)
 
+[node name="FromLeftSpawn" parent="SpawnPoints" instance=ExtResource("2_spawn_point")]
+position = Vector2(120, 360)
+spawn_id = &"from_left"
+
+[node name="FromRightSpawn" parent="SpawnPoints" instance=ExtResource("2_spawn_point")]
+position = Vector2(1160, 360)
+spawn_id = &"from_right"
+
+[node name="Transitions" type="Node2D" parent="."]
+
+[node name="LeftTransition" parent="Transitions" instance=ExtResource("3_transition")]
+position = Vector2(64, 360)
+target_area_path = "res://scenes/test_area.tscn"
+target_spawn_id = &"from_right"
+
+[node name="RightTransition" parent="Transitions" instance=ExtResource("3_transition")]
+position = Vector2(1216, 360)
+target_area_path = "res://scenes/test_area.tscn"
+target_spawn_id = &"from_left"
+
 [node name="Floor" type="Polygon2D" parent="."]
 color = Color(0.18, 0.26, 0.16, 1)
 polygon = PackedVector2Array(0, 0, 1280, 0, 1280, 720, 0, 720)
+
+[node name="LeftTransitionVisual" type="Polygon2D" parent="."]
+color = Color(0.15, 0.65, 1, 0.35)
+polygon = PackedVector2Array(32, 280, 96, 280, 96, 440, 32, 440)
+
+[node name="RightTransitionVisual" type="Polygon2D" parent="."]
+color = Color(1, 0.65, 0.15, 0.35)
+polygon = PackedVector2Array(1184, 280, 1248, 280, 1248, 440, 1184, 440)
 
 [node name="TopWallVisual" type="Polygon2D" parent="."]
 color = Color(0.32, 0.22, 0.14, 1)
