@@ -1,8 +1,8 @@
-# Havest Dream – aktueller Spielstand
+# Harvest Dream – aktueller Spielstand
 
 ## Zweck dieser Datei
 
-Diese Datei enthält den aktuell gültigen Konzeptstand von **Havest Dream**.
+Diese Datei enthält den aktuell gültigen Konzeptstand von **Harvest Dream**.
 
 - Noch nicht endgültig entschiedene Punkte werden als **offen** gekennzeichnet.
 - Spätere Inhalte werden getrennt vom Grundspiel dokumentiert.
@@ -10,9 +10,25 @@ Diese Datei enthält den aktuell gültigen Konzeptstand von **Havest Dream**.
 - Bei widersprüchlichen Angaben darf nicht stillschweigend eine Variante gewählt werden. Der Widerspruch muss zuerst geklärt werden.
 - Systeme sollen modular, erweiterbar und möglichst unabhängig voneinander aufgebaut werden, damit Inhalte später ergänzt, verändert oder entfernt werden können, ohne das gesamte Spiel umzubauen.
 
+## Plattform, Darstellung und technische Zielrichtung
+
+- **Zielplattform der ersten Entwicklungsphase:** PC
+- **Spätere Zielplattform:** Handy
+- Das Spiel wird zunächst vollständig auf dem PC entwickelt und getestet.
+- Die technische Struktur, Benutzeroberfläche und Eingabeverarbeitung müssen so angelegt werden, dass eine spätere Handy-Version ergänzt werden kann, ohne die Kernsysteme neu aufzubauen.
+- Das Spiel verwendet eine **2D-Top-down-Perspektive** im Pixelart-Stil.
+- Grundlage der Spielwelt ist ein **32 × 32 Pixel** großes Raster. Geländekacheln sind 32 × 32 Pixel groß.
+- Die Richtgröße für den Spielercharakter beträgt ungefähr **32 × 48 Pixel**.
+- Die Darstellung erfolgt im **Querformat mit einem Seitenverhältnis von 16:9**.
+- Die interne Basisauflösung beträgt **640 × 360 Pixel**. Das PC-Testfenster startet mit **1280 × 720 Pixeln**.
+- Pixelgrafiken werden ohne Glättung dargestellt und möglichst ganzzahlig skaliert.
+- Die Benutzeroberfläche wird später über Anker und flexible Container an unterschiedliche Bildschirmgrößen angepasst.
+- Die erste PC-Steuerung verwendet **WASD** für die Bewegung und die **Maus** für Werkzeuge, Aktionen, Platzierung und Menüs.
+- Touch-Eingaben für Handys und optionale Controller-Unterstützung werden später über dasselbe allgemeine Eingabesystem ergänzt.
+
 ## 1. Grundidee
 
-**Havest Dream** ist ein Farming- und Aufbauspiel.
+**Harvest Dream** ist ein Farming- und Aufbauspiel.
 
 Der Spieler baut zunächst einen eigenen Bauernhof auf. In der Nähe befindet sich ein kleines, verlassenes und beschädigtes Dorf. Mit der Zeit repariert und erweitert der Spieler dieses Dorf. Anfangs ist das Dorf leer. Neue Bewohner ziehen erst ein, nachdem passende Häuser wiederaufgebaut wurden.
 
