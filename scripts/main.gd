@@ -57,8 +57,10 @@ func _perform_area_change(target_area_path: String, target_spawn_id: StringName)
 		_area_change_in_progress = false
 		return
 
-	var next_area := area_scene.instantiate() as GameArea
+	var next_area_node := area_scene.instantiate()
+	var next_area := next_area_node as GameArea
 	if next_area == null:
+		next_area_node.free()
 		push_error("Die Zielkarte '%s' verwendet nicht die GameArea-Grundlage." % target_area_path)
 		_area_change_in_progress = false
 		return
@@ -68,7 +70,7 @@ func _perform_area_change(target_area_path: String, target_spawn_id: StringName)
 	var target_spawn := next_area.get_spawn_point(target_spawn_id)
 	if target_spawn == null:
 		area_container.remove_child(next_area)
-		next_area.queue_free()
+		next_area.free()
 		_area_change_in_progress = false
 		return
 
