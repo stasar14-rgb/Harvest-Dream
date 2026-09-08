@@ -16,3 +16,6 @@ polygon = PackedVector2Array(-16, -24, 16, -24, 16, 24, -16, 24)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 18)
 shape = SubResource("RectangleShape2D_player")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = true
