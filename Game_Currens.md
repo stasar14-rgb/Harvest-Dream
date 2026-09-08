@@ -67,9 +67,12 @@ Für die erste Version werden nur die notwendigen Grundressourcen umgesetzt. Zus
 
 ## 4. Dorfaufbau
 
-Die anfangs leere Siedlung besteht aus **vier zerstörten und unbewohnten Häusern**.
+Die Siedlung beginnt als kleines **Dorf** mit **vier zerstörten und unbewohnten Häusern**. Durch den Wiederaufbau, neue Gebäude und einziehende Bewohner wächst das Dorf im späteren Spielverlauf zu einer **Stadt** heran.
 
-**Offener Begriff:** Im Konzept werden bisher sowohl „Stadt“ als auch „Dorf“ verwendet. Bis zur gemeinsamen Festlegung wird die neutrale Bezeichnung „Siedlung“ benutzt.
+Die Bezeichnungen richten sich nach dem Entwicklungsstand:
+
+- am Anfang: Dorf
+- später nach ausreichendem Ausbau: Stadt
 
 - Der Spieler muss die Häuser mit gesammelten und verarbeiteten Materialien wiederaufbauen.
 - Erst nach dem Wiederaufbau eines Hauses kann ein neuer Bewohner einziehen.
@@ -104,9 +107,7 @@ Berufe sollen zunächst von **Level 1 bis Level 50** aufsteigen können.
 Pro Bergbau-Level ist aktuell vorgesehen:
 
 - **1 % schnelleres Abbauen**
-- **0,5 weniger Energieverbrauch**
-
-**Offene Einheit:** Es ist noch nicht entschieden, ob die Verringerung des Energieverbrauchs 0,5 feste Energiepunkte oder 0,5 % pro Level bedeutet.
+- **0,5 feste Energiepunkte weniger Energieverbrauch**
 
 Zusätzlich soll es alle zehn Level einen besonderen Berufs-Perk geben.
 
@@ -124,9 +125,24 @@ Geplante Meilensteine:
 
 Die genauen Erfahrungskurven, Perks und Maximalwerte werden später festgelegt.
 
-**Offener Balancepunkt:** Falls 0,5 feste Energiepunkte pro Level gemeint sind, ergibt das bis Level 50 insgesamt 25 Punkte weniger Energieverbrauch. Dann muss ein Mindestverbrauch oder eine andere Begrenzung bestimmt werden, damit Aktionen nicht unbeabsichtigt kostenlos oder negativ werden.
+Bis Level 50 ergibt die Verringerung insgesamt **25 Energiepunkte weniger Verbrauch**. Ein Mindestverbrauch oder eine andere Begrenzung wird bei der späteren Balance festgelegt, damit Berufsaktionen nicht unbeabsichtigt einen negativen Energieverbrauch erhalten.
 
-## 7. Zeit und Jahreszeiten
+## 7. Energiesystem
+
+Der Spieler besitzt Energie, die durch die Ausübung von Berufen verbraucht wird.
+
+Beispiele für energieverbrauchende Berufsaktionen:
+
+- Erz und Steine mit der Spitzhacke abbauen
+- Bäume oder Holzquellen mit der Axt bearbeiten
+- landwirtschaftliche Tätigkeiten mit Werkzeugen ausführen
+- Gegenstände im Rahmen eines Berufs herstellen oder bearbeiten, sofern für die jeweilige Tätigkeit Energiekosten vorgesehen sind
+
+Die Energiekosten müssen pro Aktion beziehungsweise Werkzeug festlegbar sein. Berufsboni können diesen Verbrauch reduzieren. Beim Bergbau sinkt der Verbrauch nach aktuellem Stand pro Berufslevel um feste **0,5 Energiepunkte**.
+
+Die maximale Energie, Regeneration, Wiederherstellung und der Mindestverbrauch pro Aktion werden später festgelegt.
+
+## 8. Zeit und Jahreszeiten
 
 Es gibt vier Jahreszeiten:
 
@@ -148,7 +164,7 @@ Ein Spieltag besitzt **24 Ingame-Stunden**.
 - mögliche Zeitgeschwindigkeit in Innenräumen
 - jahreszeitabhängige Pflanzen, Ressourcen und Ereignisse
 
-## 8. Werkzeuge
+## 9. Werkzeuge
 
 ### Werkzeuge im Grundspiel
 
@@ -164,12 +180,12 @@ Ein Spieltag besitzt **24 Ingame-Stunden**.
 
 Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angelegt werden. Dadurch können neue Werkzeuge, Werte, Verbesserungen und Aktionen später ergänzt oder geändert werden.
 
-## 9. Welt und Areale
+## 10. Welt und Areale
 
 ### Areale im Grundspiel
 
 - Hof
-- Stadt beziehungsweise Dorf
+- Dorf, das später zur Stadt ausgebaut wird
 - Wald
 
 Weitere Gebiete werden später ergänzt.
@@ -189,7 +205,7 @@ Später soll sie zusätzlich die Position befreundeter NPCs anzeigen können.
 
 Die Kartenanzeige muss deshalb Markierungen dynamisch hinzufügen und entfernen können, ohne für jeden NPC fest programmiert zu werden.
 
-## 10. Ziel der ersten Version
+## 11. Ziel der ersten Version
 
 Die erste spielbare Version bildet das technische und spielerische Fundament.
 
@@ -211,7 +227,7 @@ Sie soll zunächst sicherstellen, dass die wichtigsten Grundabläufe funktionier
 
 Zusätzliche Inhalte werden erst danach schrittweise ergänzt.
 
-## 11. Später geplante Inhalte
+## 12. Später geplante Inhalte
 
 Diese Inhalte gehören ausdrücklich nicht zum ersten Grundumfang:
 
@@ -226,7 +242,7 @@ Diese Inhalte gehören ausdrücklich nicht zum ersten Grundumfang:
 - Anzeige befreundeter NPCs auf der Karte
 - umfangreiche Geschichte, Quests und Ereignisse
 
-## 12. Technische Strukturregeln
+## 13. Technische Strukturregeln
 
 Das Projekt muss so aufgebaut werden, dass spätere Änderungen keine unnötigen Abhängigkeiten oder großflächigen Umbauten verursachen.
 
