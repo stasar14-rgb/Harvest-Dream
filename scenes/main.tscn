@@ -7,7 +7,8 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_main")
 
-[node name="TestArea" parent="." instance=ExtResource("2_test_area")]
+[node name="AreaContainer" type="Node2D" parent="."]
+
+[node name="TestArea" parent="AreaContainer" instance=ExtResource("2_test_area")]
 
 [node name="Player" parent="." instance=ExtResource("3_player")]
-position = Vector2(320, 180)
