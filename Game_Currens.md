@@ -67,7 +67,9 @@ Für die erste Version werden nur die notwendigen Grundressourcen umgesetzt. Zus
 
 ## 4. Dorfaufbau
 
-Das Dorf besteht am Anfang aus **vier zerstörten und unbewohnten Häusern**.
+Die anfangs leere Siedlung besteht aus **vier zerstörten und unbewohnten Häusern**.
+
+**Offener Begriff:** Im Konzept werden bisher sowohl „Stadt“ als auch „Dorf“ verwendet. Bis zur gemeinsamen Festlegung wird die neutrale Bezeichnung „Siedlung“ benutzt.
 
 - Der Spieler muss die Häuser mit gesammelten und verarbeiteten Materialien wiederaufbauen.
 - Erst nach dem Wiederaufbau eines Hauses kann ein neuer Bewohner einziehen.
@@ -104,6 +106,8 @@ Pro Bergbau-Level ist aktuell vorgesehen:
 - **1 % schnelleres Abbauen**
 - **0,5 weniger Energieverbrauch**
 
+**Offene Einheit:** Es ist noch nicht entschieden, ob die Verringerung des Energieverbrauchs 0,5 feste Energiepunkte oder 0,5 % pro Level bedeutet.
+
 Zusätzlich soll es alle zehn Level einen besonderen Berufs-Perk geben.
 
 Beispiel für Bergbau-Level 10:
@@ -120,7 +124,7 @@ Geplante Meilensteine:
 
 Die genauen Erfahrungskurven, Perks und Maximalwerte werden später festgelegt.
 
-**Offener Balancepunkt:** Eine Senkung des Energieverbrauchs um 0,5 pro Level ergibt bis Level 50 insgesamt 25 Punkte weniger Energieverbrauch. Ein Mindestverbrauch oder eine andere Begrenzung muss noch bestimmt werden, damit Aktionen nicht unbeabsichtigt kostenlos oder negativ werden.
+**Offener Balancepunkt:** Falls 0,5 feste Energiepunkte pro Level gemeint sind, ergibt das bis Level 50 insgesamt 25 Punkte weniger Energieverbrauch. Dann muss ein Mindestverbrauch oder eine andere Begrenzung bestimmt werden, damit Aktionen nicht unbeabsichtigt kostenlos oder negativ werden.
 
 ## 7. Zeit und Jahreszeiten
 
