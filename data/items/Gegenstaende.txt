@@ -1,0 +1,143 @@
+HARVEST DREAM – GEGENSTANDSLISTE
+==================================
+
+Diese Datei dient als zentrale Übersicht aller Gegenstände.
+Sie kann jederzeit erweitert oder geändert werden.
+
+Status:
+- VORHANDEN = bereits als Gegenstand im Projekt angelegt
+- GEPLANT   = für das Spiel vorgesehen, aber noch nicht als Gegenstand angelegt
+
+Allgemeine Stapelgrößen:
+- Holz und Erz: maximal 99
+- Essen und Verbrauchsgegenstände: maximal 10
+- Fische derselben Art: maximal 20
+- Werkzeuge: nicht stapelbar
+- Andere Stapelgrößen werden später festgelegt
+
+
+1. MATERIALIEN
+--------------
+
+[VORHANDEN] Holz
+[VORHANDEN] Erz
+
+
+2. SAMMELGEGENSTÄNDE
+--------------------
+
+[VORHANDEN] Beeren
+
+
+3. WERKZEUGE
+------------
+
+[GEPLANT] Spitzhacke
+[GEPLANT] Harke
+[GEPLANT] Axt
+[GEPLANT] Sichel
+
+
+4. FELDFRÜCHTE NACH JAHRESZEIT
+------------------------------
+
+Frühling:
+[GEPLANT] Kartoffel
+[GEPLANT] Karotte
+[GEPLANT] Radieschen
+[GEPLANT] Erdbeere
+
+Sommer:
+[GEPLANT] Tomate
+[GEPLANT] Mais
+[GEPLANT] Gurke
+[GEPLANT] Paprika
+
+Herbst:
+[GEPLANT] Kürbis
+[GEPLANT] Rote Bete
+[GEPLANT] Kohl
+[GEPLANT] Zwiebel
+
+Winter:
+[GEPLANT] Winterkohl
+[GEPLANT] Lauch
+[GEPLANT] Winterrübe
+
+
+5. PILZE NACH JAHRESZEIT
+------------------------
+
+Frühling:
+[GEPLANT] Morchel
+[GEPLANT] Maipilz
+
+Sommer:
+[GEPLANT] Pfifferling
+[GEPLANT] Sommersteinpilz
+
+Herbst:
+[GEPLANT] Steinpilz
+[GEPLANT] Maronenröhrling
+[GEPLANT] Fliegenpilz
+
+Winter:
+[GEPLANT] Austernseitling
+[GEPLANT] Samtfußrübling
+
+
+6. WILDPFLANZEN UND BEEREN NACH JAHRESZEIT
+-------------------------------------------
+
+Frühling:
+[GEPLANT] Löwenzahn
+[GEPLANT] Brennnessel
+[GEPLANT] Bärlauch
+
+Sommer:
+[GEPLANT] Heidelbeere
+[GEPLANT] Himbeere
+[GEPLANT] Kamille
+
+Herbst:
+[GEPLANT] Brombeere
+[GEPLANT] Hagebutte
+[GEPLANT] Haselnuss
+
+Winter:
+[GEPLANT] Wacholderbeere
+[GEPLANT] Mistel
+[GEPLANT] Tannenzapfen
+
+
+7. SPÄTER VORGESEHENE GEGENSTANDSGRUPPEN
+----------------------------------------
+
+- Fische
+- Essen und andere Verbrauchsgegenstände
+- Saatgut
+- Baumsetzlinge
+- Schmiedematerialien
+- Hergestellte Gegenstände
+- Vergrabene Münzen
+- Knochen
+- Artefakte
+- Gegenstände aus Tierhaltung
+- Kampfgegenstände
+- Gegenstände für Verzauberung
+
+
+8. DATEN PRO GEGENSTAND
+-----------------------
+
+Jeder Gegenstand soll später mindestens folgende Angaben besitzen:
+
+- Name
+- eindeutige ID
+- Icon
+- Beschreibung
+- Seltenheit
+- Grundpreis
+- maximale Stapelgröße
+- Wachstumsdauer bei Saatgut oder Baumsetzlingen
+- Qualitätsstufe (spätere Erweiterung)
