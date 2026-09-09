@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ToolData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/items/tool_data.gd" id="1_tool"]
+
+[resource]
+script = ExtResource("1_tool")
+item_id = &"shovel"
+display_name = "Schaufel"
+description = "Werkzeug zum Graben eines Lochs oder für vorgesehene Bodenaktionen."
+category = 6
+tool_type = 4
+material_tier = 0
+base_energy_cost = 5.0

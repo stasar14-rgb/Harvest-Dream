@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ToolData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/items/tool_data.gd" id="1_tool"]
+
+[resource]
+script = ExtResource("1_tool")
+item_id = &"sickle"
+display_name = "Sichel"
+description = "Werkzeug zum Schneiden von Gras."
+category = 6
+tool_type = 5
+material_tier = 0
+base_energy_cost = 5.0

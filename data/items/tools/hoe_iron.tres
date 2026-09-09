@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ToolData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/items/tool_data.gd" id="1_tool"]
+
+[resource]
+script = ExtResource("1_tool")
+item_id = &"hoe_iron"
+display_name = "Eisenhacke"
+description = "Werkzeug zum Anlegen von Ackerboden."
+category = 6
+tool_type = 2
+material_tier = 3
+base_energy_cost = 5.0
+hit_reduction = 0
+uses_charge = true
+max_charge_level = 2
+charge_step_seconds = 1.0

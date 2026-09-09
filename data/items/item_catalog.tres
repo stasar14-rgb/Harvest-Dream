@@ -5,7 +5,25 @@
 [ext_resource type="Resource" path="res://data/items/wood.tres" id="3_wood"]
 [ext_resource type="Resource" path="res://data/items/ore.tres" id="4_ore"]
 [ext_resource type="Resource" uid="uid://cx3lyror51rfj" path="res://data/items/berries.tres" id="5_berries"]
+[ext_resource type="Resource" path="res://data/items/tools/axe_copper.tres" id="6_axe_copper"]
+[ext_resource type="Resource" path="res://data/items/tools/axe_bronze.tres" id="7_axe_bronze"]
+[ext_resource type="Resource" path="res://data/items/tools/axe_iron.tres" id="8_axe_iron"]
+[ext_resource type="Resource" path="res://data/items/tools/axe_steel.tres" id="9_axe_steel"]
+[ext_resource type="Resource" path="res://data/items/tools/pickaxe_copper.tres" id="10_pickaxe_copper"]
+[ext_resource type="Resource" path="res://data/items/tools/pickaxe_bronze.tres" id="11_pickaxe_bronze"]
+[ext_resource type="Resource" path="res://data/items/tools/pickaxe_iron.tres" id="12_pickaxe_iron"]
+[ext_resource type="Resource" path="res://data/items/tools/pickaxe_steel.tres" id="13_pickaxe_steel"]
+[ext_resource type="Resource" path="res://data/items/tools/hoe_copper.tres" id="14_hoe_copper"]
+[ext_resource type="Resource" path="res://data/items/tools/hoe_bronze.tres" id="15_hoe_bronze"]
+[ext_resource type="Resource" path="res://data/items/tools/hoe_iron.tres" id="16_hoe_iron"]
+[ext_resource type="Resource" path="res://data/items/tools/hoe_steel.tres" id="17_hoe_steel"]
+[ext_resource type="Resource" path="res://data/items/tools/watering_can_copper.tres" id="18_watering_can_copper"]
+[ext_resource type="Resource" path="res://data/items/tools/watering_can_bronze.tres" id="19_watering_can_bronze"]
+[ext_resource type="Resource" path="res://data/items/tools/watering_can_iron.tres" id="20_watering_can_iron"]
+[ext_resource type="Resource" path="res://data/items/tools/watering_can_steel.tres" id="21_watering_can_steel"]
+[ext_resource type="Resource" path="res://data/items/tools/shovel.tres" id="22_shovel"]
+[ext_resource type="Resource" path="res://data/items/tools/sickle.tres" id="23_sickle"]
 
 [resource]
 script = ExtResource("1_catalog")
-items = Array[ExtResource("2_item_data")]([ExtResource("3_wood"), ExtResource("4_ore"), ExtResource("5_berries")])
+items = Array[ExtResource("2_item_data")]([ExtResource("3_wood"), ExtResource("4_ore"), ExtResource("5_berries"), ExtResource("6_axe_copper"), ExtResource("7_axe_bronze"), ExtResource("8_axe_iron"), ExtResource("9_axe_steel"), ExtResource("10_pickaxe_copper"), ExtResource("11_pickaxe_bronze"), ExtResource("12_pickaxe_iron"), ExtResource("13_pickaxe_steel"), ExtResource("14_hoe_copper"), ExtResource("15_hoe_bronze"), ExtResource("16_hoe_iron"), ExtResource("17_hoe_steel"), ExtResource("18_watering_can_copper"), ExtResource("19_watering_can_bronze"), ExtResource("20_watering_can_iron"), ExtResource("21_watering_can_steel"), ExtResource("22_shovel"), ExtResource("23_sickle")])

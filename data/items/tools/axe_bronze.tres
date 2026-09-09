@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ToolData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/items/tool_data.gd" id="1_tool"]
+
+[resource]
+script = ExtResource("1_tool")
+item_id = &"axe_bronze"
+display_name = "Bronzeaxt"
+description = "Werkzeug zum Bearbeiten von Bäumen und Holzquellen."
+category = 6
+tool_type = 0
+material_tier = 2
+base_energy_cost = 4.0
+hit_reduction = 1
+uses_charge = false
+max_charge_level = 0
+charge_step_seconds = 1.0

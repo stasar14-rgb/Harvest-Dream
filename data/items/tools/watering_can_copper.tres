@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ToolData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/items/tool_data.gd" id="1_tool"]
+
+[resource]
+script = ExtResource("1_tool")
+item_id = &"watering_can_copper"
+display_name = "Kupfergießkanne"
+description = "Werkzeug zum Bewässern von Ackerflächen."
+category = 6
+tool_type = 3
+material_tier = 1
+base_energy_cost = 5.0
+hit_reduction = 0
+uses_charge = true
+max_charge_level = 0
+charge_step_seconds = 1.0
