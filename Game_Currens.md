@@ -115,8 +115,8 @@ Ein einzelner Gegenstand kann seine Standard-Stapelgröße überschreiben. Quali
 - Die Aktionsleiste kann mit den Zahlentasten **1 bis 9 und 0** sowie mit der Maus ausgewählt werden.
 - Gegenstände können mit gedrückter linker Maustaste zwischen Inventar- und Aktionsleistenplätzen verschoben werden.
 - **Umschalt + linke Maustaste** verschiebt einen vollständigen Stapel automatisch in den nächsten verfügbaren Platz des jeweils anderen Bereichs.
-- **Umschalt + rechte Maustaste** verschiebt die Hälfte eines Stapels in den jeweils anderen Bereich.
-- **Strg + rechte Maustaste** öffnet eine Mengenauswahl für die zu verschiebende Anzahl.
+- **Umschalt + rechte Maustaste** teilt einen Stapel zur Hälfte und legt den abgetrennten Teil in den nächsten freien Platz desselben Bereichs.
+- **Strg + rechte Maustaste** öffnet eine Mengenauswahl und legt die gewählte Teilmenge in einen freien Platz desselben Bereichs.
 - Bei Händlern soll Umschalt + linke Maustaste später den vollständigen angeklickten Stapel verkaufen.
 - Ist die gesamte verfügbare Kapazität voll, bleiben nicht aufnehmbare Gegenstände auf dem Boden liegen.
 - Käufe und Questabschlüsse mit Gegenstandsbelohnung werden bei fehlendem Platz verhindert und zeigen eine verständliche Meldung.
