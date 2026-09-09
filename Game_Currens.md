@@ -255,6 +255,8 @@ Festgelegter Tagesablauf:
 
 - Spitzhacke
 - Hacke
+- Gießkanne
+- Schaufel
 - Axt
 - Sichel
 
@@ -272,11 +274,14 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
 - Die anfängliche Interaktionsreichweite beträgt **32 Pixel**, entsprechend einem Feld des 32 × 32-Pixel-Rasters.
 - Das nächstgelegene erreichbare Interaktionsobjekt wird sichtbar hervorgehoben.
 - Werkzeugaktionen und allgemeine Interaktionen bleiben getrennte Eingabeaktionen, damit später Touch- und Controller-Bedienung ergänzt werden können.
-- Ist die **Hacke** ausgewählt, erscheint direkt vor dem Spieler eine sichtbare Markierung in der Größe eines **32 × 32-Pixel-Rasterfeldes**.
-- Die Markierung liegt unmittelbar am Feld des Spielers an und wechselt entsprechend seiner Blickrichtung nach oben, unten, links oder rechts.
-- Sie zeigt genau das Feld an, das beim nächsten Einsatz der Hacke mit der linken Maustaste als Ackerfeld bearbeitet werden soll.
-- Die Markierung ist nur sichtbar, solange die Hacke als aktives Werkzeug ausgewählt ist.
-- Ob ein markiertes Feld tatsächlich bearbeitet werden darf, entscheidet später das Landwirtschafts- beziehungsweise Bodensystem; eine ungültige Stelle darf durch den Einsatz nicht verändert werden.
+- Ist die **Hacke**, **Gießkanne** oder **Schaufel** ausgewählt, erscheint direkt vor dem Spieler eine sichtbare Markierung in der Größe eines **32 × 32-Pixel-Rasterfeldes**.
+- Alle drei Werkzeuge verwenden dasselbe allgemeine Zielfeldsystem. Die Markierung liegt unmittelbar am Feld des Spielers an und wechselt entsprechend seiner Blickrichtung nach oben, unten, links oder rechts.
+- Sie zeigt genau das Feld an, das beim nächsten Einsatz mit der linken Maustaste bearbeitet wird:
+  - Hacke: Feld als Ackerboden bearbeiten
+  - Gießkanne: Feld bewässern
+  - Schaufel: Feld ausgraben beziehungsweise eine dafür vorgesehene Bodenaktion ausführen
+- Die Markierung ist nur sichtbar, solange eines dieser drei Werkzeuge als aktives Werkzeug ausgewählt ist.
+- Ob das markierte Feld mit dem jeweiligen Werkzeug bearbeitet werden darf, entscheidet später das zuständige Landwirtschafts- beziehungsweise Bodensystem. Eine ungültige Stelle darf durch den Einsatz nicht verändert werden.
 
 ## 10. Welt und Areale
 
