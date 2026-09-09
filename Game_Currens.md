@@ -277,7 +277,8 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
   3. Eisen
   4. Stahl
 - **Axt, Spitzhacke, Hacke und Gießkanne** verwenden diese vier Verbesserungsstufen.
-- Höhere Werkzeugstufen sollen die jeweilige Aktion beschleunigen und ihren Energieverbrauch senken.
+- Bei **Axt und Spitzhacke** werden mit jeder höheren Materialstufe weniger Schläge für die jeweilige Ressource benötigt und der Energieverbrauch sinkt.
+- Die **Hacke** bearbeitet mit jeder höheren Materialstufe mehr Felder gleichzeitig und verbraucht weniger Energie.
 - Die **Gießkanne** bewässert abhängig von ihrer Materialstufe folgende Fläche:
   1. Kupfer (Stufe 1): **1 Feld**
   2. Bronze (Stufe 2): **3 Felder** als 3×1-Reihe
@@ -285,8 +286,8 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
   4. Stahl (Stufe 4): **9 Felder** als 3×3-Fläche
 - Die Bewässerungsfläche liegt unmittelbar vor dem Spieler und dreht sich passend zu seiner Blickrichtung.
 - Mögliche spätere Gießkannenstufen vergrößern die Fläche nicht weiter, sondern senken ausschließlich den Energieverbrauch.
-- Die **Hacke** bearbeitet weiterhin das angezeigte einzelne 32×32-Feld, solange für sie keine andere Verbesserungswirkung festgelegt wurde.
-- Die genauen Zeit- und Energiewerte pro Stufe sind noch offen und werden vor der eigentlichen Balance festgelegt.
+- Die genaue Anzahl und Anordnung der gleichzeitig bearbeiteten Felder pro Hackenstufe ist noch offen. Die Zielfeldanzeige muss die vollständige Fläche vor dem Einsatz sichtbar markieren.
+- Die genaue Anzahl benötigter Schläge für Axt und Spitzhacke sowie die Energiewerte aller Werkzeugstufen sind noch offen und werden vor der eigentlichen Balance festgelegt.
 - Die **Sichel** besitzt keine Verbesserungsstufen, da sie Gras unabhängig vom Material gleich schneidet.
 - Die **Schaufel** besitzt keine Verbesserungsstufen, da sie ausschließlich ein Loch beziehungsweise eine dafür vorgesehene Bodenstelle gräbt.
 
