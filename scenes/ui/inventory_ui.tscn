@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/inventory/inventory_ui.gd" id="1_inventory_ui"]
 
+[sub_resource type="Theme" id="Theme_inventory"]
+default_font_size = 8
+
 [node name="InventoryUI" type="CanvasLayer"]
+layer = 20
 script = ExtResource("1_inventory_ui")
 
 [node name="Root" type="Control" parent="."]
@@ -13,6 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = SubResource("Theme_inventory")
 
 [node name="InventoryPanel" type="PanelContainer" parent="Root"]
 layout_mode = 1
@@ -41,6 +46,7 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="Root/InventoryPanel/Margin/VBox"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 10
 text = "Inventar"
 horizontal_alignment = 1
 
@@ -102,6 +108,7 @@ text = "Inventar voll"
 horizontal_alignment = 1
 
 [node name="QuantityDialog" type="ConfirmationDialog" parent="."]
+theme = SubResource("Theme_inventory")
 title = "Stapel teilen"
 dialog_text = "Wie viele Gegenstände sollen in einen neuen Platz abgetrennt werden?"
 ok_button_text = "Teilen"
