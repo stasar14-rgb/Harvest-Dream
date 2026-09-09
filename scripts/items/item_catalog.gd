@@ -1,6 +1,7 @@
 class_name ItemCatalog
 extends Resource
 
+## Liste aller Gegenstände, die in diesem Katalog registriert sind.
 @export var items: Array[ItemData] = []
 
 var _items_by_id: Dictionary = {}

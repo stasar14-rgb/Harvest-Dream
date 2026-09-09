@@ -42,10 +42,15 @@ const MONTH_NAMES: Array[String] = [
 	"Winter",
 ]
 
+## Aktueller Tag des Monats. Jeder Monat besitzt 28 Tage.
 @export_range(1, 28, 1) var current_day: int = 1
+## Aktueller Monat beziehungsweise die aktuelle Jahreszeit.
 @export var current_month: Month = Month.SPRING
+## Aktuelles Spieljahr. Ein neuer Spielstand beginnt in Jahr 1.
 @export_range(1, 9999, 1) var current_year: int = 1
+## Aktuelle Stunde der Spielzeit im 24-Stunden-Format.
 @export_range(0, 23, 1) var current_hour: int = NORMAL_WAKE_HOUR
+## Aktuelle Minute der Spielzeit.
 @export_range(0, 59, 1) var current_minute: int = 0
 
 var _real_seconds_buffer := 0.0

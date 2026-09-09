@@ -334,6 +334,7 @@ Das Projekt muss so aufgebaut werden, dass spätere Änderungen keine unnötigen
 - Speicherdaten benötigen eine klare Versionsstruktur, damit spätere Updates ältere Spielstände möglichst weiterverwenden können.
 - Zentrale Systeme kommunizieren über klar definierte Schnittstellen oder Signale und greifen nicht unnötig direkt ineinander.
 - Systeme für spätere Inhalte dürfen vorbereitet, aber nicht vorzeitig vollständig gebaut werden.
+- Jede im Godot-Inspektor sichtbare Einstellung erhält einen kurzen deutschen Hilfetext, der Zweck und Auswirkung verständlich erklärt.
 
 ### Vorgesehene getrennte Datenbereiche
 

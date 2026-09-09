@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+## Bewegungsgeschwindigkeit des Spielers in Pixeln pro Sekunde.
 @export var move_speed: float = 100.0
 
 func _physics_process(_delta: float) -> void:

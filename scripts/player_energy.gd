@@ -9,9 +9,13 @@ signal warm_clothing_changed(is_active: bool)
 const STARTING_MAXIMUM_ENERGY := 100.0
 const WINTER_EXTRA_COST_PERCENT := 25.0
 
+## Pfad zum Kalender, der Schlaf und Tageswechsel meldet.
 @export var calendar_path: NodePath = ^"../GameCalendar"
+## Pfad zum Jahreszeitensystem für zusätzliche Energiekosten im Winter.
 @export var season_system_path: NodePath = ^"../SeasonSystem"
+## Aktueller maximaler Energiewert des Spielers.
 @export var maximum_energy: float = STARTING_MAXIMUM_ENERGY
+## Momentan verfügbare Energie des Spielers.
 @export var current_energy: float = STARTING_MAXIMUM_ENERGY
 
 @onready var _calendar := get_node_or_null(calendar_path) as GameCalendar
