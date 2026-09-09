@@ -283,7 +283,12 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
   - Eisen: Grund-Schlagzahl − 2
   - Stahl: Grund-Schlagzahl − 3
 - Unabhängig von der Werkzeugstufe bleibt mindestens **ein Schlag** notwendig. Dadurch können verschiedene Bäume, Steine und Erze eigene Grund-Schlagzahlen besitzen.
-- Zusätzlich sinkt mit jeder höheren Materialstufe der Energieverbrauch von Axt und Spitzhacke.
+- Jeder einzelne Schlag mit Axt oder Spitzhacke besitzt abhängig von der Materialstufe folgende Grundkosten:
+  - Kupfer: **5 Energie**
+  - Bronze: **4 Energie**
+  - Eisen: **3 Energie**
+  - Stahl: **2 Energie**
+- Winteraufschlag und spätere Berufsboni werden auf diese Grundkosten angewendet.
 - **Hacke und Gießkanne** verwenden dieselben freischaltbaren Bearbeitungsflächen:
   1. Kupfer (Stufe 1): **1 Feld**
   2. Bronze (Stufe 2): **3 Felder** als 3×1-Reihe
@@ -302,7 +307,7 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
 - Die Bearbeitungsfläche liegt unmittelbar vor dem Spieler und dreht sich passend zu seiner Blickrichtung.
 - Mit jeder höheren Materialstufe sinkt außerdem der Energieverbrauch von Hacke und Gießkanne.
 - Mögliche spätere Werkzeugstufen vergrößern die Fläche nicht über 3×3 hinaus, sondern senken ausschließlich den Energieverbrauch.
-- Die Grund-Schlagzahlen der einzelnen Bäume, Steine und Erze sowie die Energiewerte der Werkzeugstufen sind noch offen und werden vor der eigentlichen Balance festgelegt.
+- Die Grund-Schlagzahlen der einzelnen Bäume, Steine und Erze bleiben offen und werden bei den jeweiligen Ressourcendaten festgelegt.
 - Die **Sichel** besitzt keine Verbesserungsstufen, da sie Gras unabhängig vom Material gleich schneidet.
 - Die **Schaufel** besitzt keine Verbesserungsstufen, da sie ausschließlich ein Loch beziehungsweise eine dafür vorgesehene Bodenstelle gräbt.
 
