@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="PackedScene" path="res://scenes/test_area.tscn" id="2_test_area"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://scripts/game_calendar.gd" id="4_calendar"]
 [ext_resource type="Script" path="res://scripts/season_system.gd" id="5_season"]
 [ext_resource type="Script" path="res://scripts/player_energy.gd" id="6_energy"]
+[ext_resource type="Script" path="res://scripts/items/item_database.gd" id="7_item_database"]
+[ext_resource type="Resource" path="res://data/items/item_catalog.tres" id="8_item_catalog"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_main")
@@ -21,6 +23,10 @@ calendar_path = NodePath("../GameCalendar")
 script = ExtResource("6_energy")
 calendar_path = NodePath("../GameCalendar")
 season_system_path = NodePath("../SeasonSystem")
+
+[node name="ItemDatabase" type="Node" parent="." groups=["item_database"]]
+script = ExtResource("7_item_database")
+catalog = ExtResource("8_item_catalog")
 
 [node name="AreaContainer" type="Node2D" parent="."]
 

@@ -81,6 +81,29 @@ In der Spielwelt sollen unter anderem folgende Gegenstände gesammelt werden kö
 
 Für die erste Version werden nur die notwendigen Grundressourcen umgesetzt. Zusätzliche Sammelgegenstände folgen später.
 
+### Gegenstandsdaten und Katalog
+
+Jeder Gegenstand besitzt eigenständige Daten:
+
+- eindeutige ID
+- sichtbarer Name
+- Icon
+- Beschreibung
+- Kategorie
+- Seltenheit
+- Grundpreis
+- maximale Stapelgröße
+- optionale Wachstumsdauer in Tagen für Saatgut und Baumsetzlinge
+
+Vorerst gelten folgende Standard-Stapelgrößen:
+
+- Holz und Erz beziehungsweise Materialien: **99**
+- Essen und Verbrauchsgegenstände: **10**
+- Fische: **20 pro Fischart**
+- nicht stapelbare Gegenstände: **1**
+
+Ein einzelner Gegenstand kann seine Standard-Stapelgröße überschreiben. Qualitätsstufen werden technisch vorbereitet, aber erst später als eigenes System umgesetzt.
+
 ## 4. Dorfaufbau
 
 Die Siedlung beginnt als kleines **Dorf** mit **vier zerstörten und unbewohnten Häusern**. Durch den Wiederaufbau, neue Gebäude und einziehende Bewohner wächst das Dorf im späteren Spielverlauf zu einer **Stadt** heran.
