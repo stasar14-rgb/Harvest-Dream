@@ -278,7 +278,8 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
   4. Stahl
 - **Axt, Spitzhacke, Hacke und Gießkanne** verwenden diese vier Verbesserungsstufen.
 - Höhere Werkzeugstufen sollen die jeweilige Aktion beschleunigen und ihren Energieverbrauch senken.
-- Für Hacke und Gießkanne ist derzeit keine Vergrößerung der bearbeiteten Fläche festgelegt. Sie bearbeiten weiterhin das angezeigte einzelne 32×32-Feld.
+- Die **Gießkanne** bewässert mit jeder höheren Materialstufe mehr Felder gleichzeitig. Die genaue Anzahl und Anordnung der bewässerten Felder pro Stufe ist noch offen.
+- Die **Hacke** bearbeitet weiterhin das angezeigte einzelne 32×32-Feld, solange für sie keine andere Verbesserungswirkung festgelegt wurde.
 - Die genauen Zeit- und Energiewerte pro Stufe sind noch offen und werden vor der eigentlichen Balance festgelegt.
 - Die **Sichel** besitzt keine Verbesserungsstufen, da sie Gras unabhängig vom Material gleich schneidet.
 - Die **Schaufel** besitzt keine Verbesserungsstufen, da sie ausschließlich ein Loch beziehungsweise eine dafür vorgesehene Bodenstelle gräbt.
