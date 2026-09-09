@@ -10,7 +10,7 @@ signal area_change_requested(target_area_path: String, target_spawn_id: StringNa
 ## Pausiert die Spielzeit in diesem Areal, zum Beispiel in Häusern.
 @export var pauses_time: bool = false
 ## Begrenzung, innerhalb der sich die Kamera in diesem Areal bewegen darf.
-@export var camera_bounds: Rect2i = Rect2i(0, 0, 640, 360)
+@export var camera_bounds: Rect2i = Rect2i(0, 0, 1280, 720)
 ## Spawnpunkt, der verwendet wird, wenn keine andere Spawn-ID angegeben wurde.
 @export var default_spawn_id: StringName = &"default"
 
