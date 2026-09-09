@@ -1,21 +1,21 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene format=3 uid="uid://ds26hnb8rytfq"]
 
-[ext_resource type="Script" path="res://scripts/player/player_movement.gd" id="1_movement"]
+[ext_resource type="Script" uid="uid://cb6llbx0vc7ss" path="res://scripts/player/player_movement.gd" id="1_movement"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
 size = Vector2(20, 12)
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=304898117 groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_movement")
 
-[node name="PlaceholderVisual" type="Polygon2D" parent="."]
+[node name="PlaceholderVisual" type="Polygon2D" parent="." unique_id=291081414]
 color = Color(0.2, 0.65, 0.3, 1)
-polygon = PackedVector2Array(-16, -24, 16, -24, 16, 24, -16, 24)
+polygon = PackedVector2Array(-12.551436, -18.827156, 12.551436, -18.827156, 12.551436, 18.827156, -12.551436, 18.827156)
+uv = PackedVector2Array(-12.551436, -18.827156, 12.551436, -18.827156, 12.551436, 18.827156, -12.551436, 18.827156)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 18)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2134734891]
+position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_player")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-enabled = true
+[node name="Camera2D" type="Camera2D" parent="." unique_id=536503387]
