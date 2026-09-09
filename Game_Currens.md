@@ -308,8 +308,9 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
 - Mit jeder höheren Materialstufe sinkt außerdem der Energieverbrauch von Hacke und Gießkanne.
 - Mögliche spätere Werkzeugstufen vergrößern die Fläche nicht über 3×3 hinaus, sondern senken ausschließlich den Energieverbrauch.
 - Die Grund-Schlagzahlen der einzelnen Bäume, Steine und Erze bleiben offen und werden bei den jeweiligen Ressourcendaten festgelegt.
-- Die **Sichel** besitzt keine Verbesserungsstufen, da sie Gras unabhängig vom Material gleich schneidet.
-- Die **Schaufel** besitzt keine Verbesserungsstufen, da sie ausschließlich ein Loch beziehungsweise eine dafür vorgesehene Bodenstelle gräbt.
+- Die **Sichel** besitzt keine Verbesserungsstufen, da sie Gras unabhängig vom Material gleich schneidet. Ein Einsatz kostet **5 Energie**.
+- Die **Schaufel** besitzt keine Verbesserungsstufen, da sie ausschließlich ein Loch beziehungsweise eine dafür vorgesehene Bodenstelle gräbt. Ein Einsatz kostet **5 Energie**.
+- Winteraufschlag und spätere Berufsboni werden auch bei Sichel und Schaufel auf diese Grundkosten angewendet.
 
 ### Erze und Barren
 
