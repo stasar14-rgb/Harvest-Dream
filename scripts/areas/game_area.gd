@@ -5,6 +5,7 @@ signal area_change_requested(target_area_path: String, target_spawn_id: StringNa
 
 @export var area_id: StringName = &""
 @export var display_name: String = ""
+@export var pauses_time: bool = false
 @export var camera_bounds: Rect2i = Rect2i(0, 0, 640, 360)
 @export var default_spawn_id: StringName = &"default"
 

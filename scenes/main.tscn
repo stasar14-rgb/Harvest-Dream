@@ -8,7 +8,7 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_main")
 
-[node name="GameCalendar" type="Node" parent="."]
+[node name="GameCalendar" type="Node" parent="." groups=["game_calendar"]]
 script = ExtResource("4_calendar")
 
 [node name="AreaContainer" type="Node2D" parent="."]

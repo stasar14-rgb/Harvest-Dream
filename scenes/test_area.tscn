@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://scripts/areas/game_area.gd" id="1_area"]
 [ext_resource type="PackedScene" path="res://scenes/areas/spawn_point.tscn" id="2_spawn_point"]
 [ext_resource type="PackedScene" path="res://scenes/areas/area_transition.tscn" id="3_transition"]
+[ext_resource type="Script" path="res://scripts/debug_time_display.gd" id="4_debug_time"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_horizontal"]
 size = Vector2(1280, 16)
@@ -15,6 +16,21 @@ script = ExtResource("1_area")
 area_id = &"test_area"
 display_name = "Testfläche"
 camera_bounds = Rect2i(0, 0, 1280, 720)
+
+[node name="DebugTimeLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="TimeLabel" type="Label" parent="DebugTimeLayer"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 260.0
+offset_bottom = 58.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Kalender wird geladen ..."
+script = ExtResource("4_debug_time")
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 

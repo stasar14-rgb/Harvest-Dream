@@ -171,13 +171,17 @@ Jede Jahreszeit dauert **28 Spieltage**. Ein vollständiges Spieljahr umfasst da
 
 Ein Spieltag besitzt **24 Ingame-Stunden**.
 
+Festgelegter Tagesablauf:
+
+- Ein vollständiger normaler Spieltag dauert **20 Minuten in Echtzeit**.
+- Ein normaler Tag beginnt um **06:00 Uhr**.
+- Der Spieler kann bis spätestens **02:00 Uhr** wach bleiben.
+- Ist der Spieler um 02:00 Uhr noch wach, schläft er automatisch ein.
+- Nach einem erzwungenen Einschlafen wacht der Spieler erst um **08:00 Uhr** auf und verliert zusätzlich **20 % seiner Energie**.
+- Die Zeit pausiert in Menüs, während Dialogen sowie im eigenen Haus und in Häusern von NPCs.
+
 **Noch offen:**
 
-- Dauer eines vollständigen Spieltages in Echtzeit
-- Uhrzeit des Tagesbeginns
-- Uhrzeit des Tagesendes beziehungsweise erzwungene Nachtruhe
-- Verhalten der Zeit in Menüs
-- mögliche Zeitgeschwindigkeit in Innenräumen
 - jahreszeitabhängige Pflanzen, Ressourcen und Ereignisse
 
 ## 9. Werkzeuge
