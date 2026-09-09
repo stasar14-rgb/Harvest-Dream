@@ -284,10 +284,12 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
   3. Eisen (Stufe 3): **6 Felder** als 3×2-Fläche
   4. Stahl (Stufe 4): **9 Felder** als 3×3-Fläche
 - Hacke und Gießkanne werden mit gedrückt gehaltener **linker Maustaste** aufgeladen:
-  - kurzer Klick: 1 Feld
-  - erste Aufladestufe: 3 Felder
-  - zweite Aufladestufe: 6 Felder
-  - dritte Aufladestufe: 9 Felder
+  - kurzer Klick: 1 Feld für **5 Energie**
+  - erste Aufladestufe: 3 Felder für **7,5 Energie**
+  - zweite Aufladestufe: 6 Felder für **10 Energie**
+  - dritte Aufladestufe: 9 Felder für **12,5 Energie**
+- Dies sind die vorläufigen Grundkosten vor späteren Verringerungen durch Werkzeugstufen oder Berufsboni und vor dem winterlichen Aufschlag.
+- Jede höhere Aufladestufe kostet mehr Energie, ist bezogen auf die Anzahl der gleichzeitig bearbeiteten Felder jedoch effizienter.
 - Die maximal erreichbare Aufladestufe wird durch die aktuelle Materialstufe des Werkzeugs begrenzt. Längeres Gedrückthalten überschreitet die bereits freigeschaltete Fläche nicht.
 - Während des Aufladens wächst die Zielmarkierung sichtbar auf die jeweils erreichte Fläche. Beim Loslassen wird genau die angezeigte Fläche bearbeitet.
 - Die Bearbeitungsfläche liegt unmittelbar vor dem Spieler und dreht sich passend zu seiner Blickrichtung.
