@@ -278,15 +278,21 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
   4. Stahl
 - **Axt, Spitzhacke, Hacke und Gießkanne** verwenden diese vier Verbesserungsstufen.
 - Bei **Axt und Spitzhacke** werden mit jeder höheren Materialstufe weniger Schläge für die jeweilige Ressource benötigt und der Energieverbrauch sinkt.
-- Die **Hacke** bearbeitet mit jeder höheren Materialstufe mehr Felder gleichzeitig und verbraucht weniger Energie.
-- Die **Gießkanne** bewässert abhängig von ihrer Materialstufe folgende Fläche:
+- **Hacke und Gießkanne** verwenden dieselben freischaltbaren Bearbeitungsflächen:
   1. Kupfer (Stufe 1): **1 Feld**
   2. Bronze (Stufe 2): **3 Felder** als 3×1-Reihe
   3. Eisen (Stufe 3): **6 Felder** als 3×2-Fläche
   4. Stahl (Stufe 4): **9 Felder** als 3×3-Fläche
-- Die Bewässerungsfläche liegt unmittelbar vor dem Spieler und dreht sich passend zu seiner Blickrichtung.
-- Mögliche spätere Gießkannenstufen vergrößern die Fläche nicht weiter, sondern senken ausschließlich den Energieverbrauch.
-- Die genaue Anzahl und Anordnung der gleichzeitig bearbeiteten Felder pro Hackenstufe ist noch offen. Die Zielfeldanzeige muss die vollständige Fläche vor dem Einsatz sichtbar markieren.
+- Hacke und Gießkanne werden mit gedrückt gehaltener **linker Maustaste** aufgeladen:
+  - kurzer Klick: 1 Feld
+  - erste Aufladestufe: 3 Felder
+  - zweite Aufladestufe: 6 Felder
+  - dritte Aufladestufe: 9 Felder
+- Die maximal erreichbare Aufladestufe wird durch die aktuelle Materialstufe des Werkzeugs begrenzt. Längeres Gedrückthalten überschreitet die bereits freigeschaltete Fläche nicht.
+- Während des Aufladens wächst die Zielmarkierung sichtbar auf die jeweils erreichte Fläche. Beim Loslassen wird genau die angezeigte Fläche bearbeitet.
+- Die Bearbeitungsfläche liegt unmittelbar vor dem Spieler und dreht sich passend zu seiner Blickrichtung.
+- Mit jeder höheren Materialstufe sinkt außerdem der Energieverbrauch von Hacke und Gießkanne.
+- Mögliche spätere Werkzeugstufen vergrößern die Fläche nicht über 3×3 hinaus, sondern senken ausschließlich den Energieverbrauch.
 - Die genaue Anzahl benötigter Schläge für Axt und Spitzhacke sowie die Energiewerte aller Werkzeugstufen sind noch offen und werden vor der eigentlichen Balance festgelegt.
 - Die **Sichel** besitzt keine Verbesserungsstufen, da sie Gras unabhängig vom Material gleich schneidet.
 - Die **Schaufel** besitzt keine Verbesserungsstufen, da sie ausschließlich ein Loch beziehungsweise eine dafür vorgesehene Bodenstelle gräbt.
@@ -311,10 +317,10 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
 - Werkzeugaktionen und allgemeine Interaktionen bleiben getrennte Eingabeaktionen, damit später Touch- und Controller-Bedienung ergänzt werden können.
 - Ist die **Hacke**, **Gießkanne** oder **Schaufel** ausgewählt, erscheint direkt vor dem Spieler eine sichtbare Zielmarkierung. Bei der Schaufel zeigt sie ein **32 × 32-Pixel-Rasterfeld**. Bei Hacke und Gießkanne zeigt sie abhängig von der Materialstufe alle Felder der jeweiligen Bearbeitungsfläche.
 - Alle drei Werkzeuge verwenden dasselbe allgemeine Zielfeldsystem. Die Markierung liegt unmittelbar am Feld des Spielers an und wechselt entsprechend seiner Blickrichtung nach oben, unten, links oder rechts.
-- Sie zeigt genau das Feld beziehungsweise bei der Gießkanne alle Felder an, die beim nächsten Einsatz mit der linken Maustaste bearbeitet werden:
-  - Hacke: Feld als Ackerboden bearbeiten
-  - Gießkanne: Feld bewässern
-  - Schaufel: Feld ausgraben beziehungsweise eine dafür vorgesehene Bodenaktion ausführen
+- Sie zeigt genau das Feld beziehungsweise bei Hacke und Gießkanne alle Felder an, die beim nächsten Einsatz bearbeitet werden:
+  - Hacke: angezeigte Fläche als Ackerboden bearbeiten
+  - Gießkanne: angezeigte Fläche bewässern
+  - Schaufel: einzelnes Feld ausgraben beziehungsweise eine dafür vorgesehene Bodenaktion ausführen
 - Die Markierung ist nur sichtbar, solange eines dieser drei Werkzeuge als aktives Werkzeug ausgewählt ist.
 - Ob das markierte Feld mit dem jeweiligen Werkzeug bearbeitet werden darf, entscheidet später das zuständige Landwirtschafts- beziehungsweise Bodensystem. Eine ungültige Stelle darf durch den Einsatz nicht verändert werden.
 
