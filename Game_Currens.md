@@ -357,6 +357,17 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
 - Sind sämtliche Zielfelder ungültig, wird keine Aktion ausgeführt und keine Energie verbraucht.
 - Das Bewässern eines leeren Ackerfeldes setzt dessen Drei-Tage-Zähler nicht zurück. Nur eine vorhandene Pflanze verhindert das automatische Zurücksetzen zu normalem Boden.
 
+### Pflanzen-Grundregeln
+
+- Saatgut kann sowohl auf trockenem als auch auf bewässertem Ackerboden ausgesät werden.
+- Eine Pflanze wächst am Tagesbeginn nur dann um einen Wachstumstag weiter, wenn ihr Feld am vorherigen Tag bewässert wurde.
+- Wird eine Pflanze nicht gegossen, pausiert ihr Wachstum für diesen Tag.
+- Nach **drei aufeinanderfolgenden trockenen Tagen** verdirbt die Pflanze und wächst nicht weiter.
+- Ein späterer bewässerter Tag setzt die laufende Zählung trockener Tage wieder auf null, solange die Pflanze noch nicht verdorben ist.
+- Nach der Ernte bleibt das Feld als Ackerboden bestehen. Es muss nicht erneut mit der Hacke bearbeitet werden.
+- Ob der bestehende Ackerboden nach der Ernte trocken oder bewässert ist, bleibt unverändert.
+- Konkrete Pflanzenarten, Wachstumszeiten, Erntemengen, Jahreszeiten und Grafiken werden später als austauschbare Pflanzendaten eingetragen.
+
 ## 10. Welt und Areale
 
 ### Areale im Grundspiel
