@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/inventory/inventory_ui.gd" id="1_inventory_ui"]
 
 [sub_resource type="Theme" id="Theme_inventory"]
-default_font_size = 8
+default_font_size = 10
 
 [node name="InventoryUI" type="CanvasLayer"]
 layer = 20
@@ -46,7 +46,7 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="Root/InventoryPanel/Margin/VBox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 12
 text = "Inventar"
 horizontal_alignment = 1
 
