@@ -9,6 +9,8 @@ signal tool_use_requested(tool: ToolData, target_positions: Array[Vector2], base
 @export_range(1, 256, 1) var grid_size: int = 32
 ## Verschiebt den Mittelpunkt des Spielerfeldes relativ zum Ursprung der Spielerfigur.
 @export var player_grid_center_offset: Vector2 = Vector2(0.0, 16.0)
+## Ursprung des globalen 32×32-Rasters. Er muss zum Raster des aktuellen Areals passen.
+@export var grid_origin: Vector2 = Vector2.ZERO
 ## Füllfarbe der Zielfelder. Die Farbe ist nur eine vorläufige Testdarstellung.
 @export var target_fill_color: Color = Color(1.0, 0.85, 0.15, 0.22)
 ## Rahmenfarbe der Zielfelder. Die Farbe ist nur eine vorläufige Testdarstellung.
@@ -44,6 +46,9 @@ func _ready() -> void:
 	_refresh_active_tool()
 
 func _process(delta: float) -> void:
+	if _shows_target_marker():
+		queue_redraw()
+
 	if _player != null and _last_facing_direction != _player.facing_direction:
 		_last_facing_direction = _player.facing_direction
 		queue_redraw()
@@ -80,11 +85,23 @@ func get_target_world_positions() -> Array[Vector2]:
 	if active_tool == null or _player == null:
 		return positions
 
+	var player_cell_center := _get_player_cell_center_world()
 	for offset in _get_target_offsets():
-		var local_target := player_grid_center_offset + Vector2(offset) * float(grid_size)
-		positions.append(_player.global_position + local_target)
+		positions.append(player_cell_center + Vector2(offset) * float(grid_size))
 
 	return positions
+
+func _get_player_cell_center_world() -> Vector2:
+	var player_grid_position := _player.global_position + player_grid_center_offset - grid_origin
+	var player_cell := Vector2i(
+		floori(player_grid_position.x / float(grid_size)),
+		floori(player_grid_position.y / float(grid_size))
+	)
+	return (
+		grid_origin
+		+ Vector2(player_cell) * float(grid_size)
+		+ Vector2.ONE * float(grid_size) * 0.5
+	)
 
 func _begin_tool_input() -> void:
 	_tool_input_active = true
@@ -179,8 +196,8 @@ func _draw() -> void:
 
 	var cell_size := Vector2(float(grid_size), float(grid_size))
 	var half_cell := cell_size * 0.5
-	for offset in _get_target_offsets():
-		var center := player_grid_center_offset + Vector2(offset) * float(grid_size)
+	for world_position in get_target_world_positions():
+		var center := to_local(world_position)
 		var cell_rect := Rect2(center - half_cell, cell_size)
 		draw_rect(cell_rect, target_fill_color, true)
 		draw_rect(cell_rect, target_border_color, false, target_border_width)

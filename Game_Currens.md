@@ -342,6 +342,21 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
 - Die Markierung ist nur sichtbar, solange eines dieser drei Werkzeuge als aktives Werkzeug ausgewählt ist.
 - Ob das markierte Feld mit dem jeweiligen Werkzeug bearbeitet werden darf, entscheidet später das zuständige Landwirtschafts- beziehungsweise Bodensystem. Eine ungültige Stelle darf durch den Einsatz nicht verändert werden.
 
+### Boden- und Ackerfeldregeln
+
+- Die Hacke wandelt ein dafür erlaubtes normales Bodenfeld in Ackerboden um.
+- Die Schaufel entfernt angelegten Ackerboden und stellt das Feld wieder als normalen Boden her.
+- Ein bewässertes Ackerfeld bleibt bis zum Beginn des nächsten Spieltages feucht und wird dann wieder trocken.
+- Ackerboden ohne Pflanze verschwindet nach **drei vollständigen Spieltagen** automatisch und wird wieder zu normalem Boden.
+- Ein bepflanztes Ackerfeld wird durch diese Drei-Tage-Regel nicht entfernt.
+- Welche Bodenfelder bearbeitbar sind, wird später pro Karte beziehungsweise Bodenart festgelegt.
+- Enthält eine Mehrfeldaktion sowohl gültige als auch ungültige Zielfelder, werden ausschließlich die gültigen Felder bearbeitet.
+- Die Energiekosten werden proportional zur Anzahl gültiger Zielfelder angepasst: Grundkosten der gewählten Aufladestufe × gültige Felder ÷ alle Zielfelder der Aufladestufe.
+- Das proportionale Ergebnis wird mathematisch auf den nächsten **0,5-Energiewert** gerundet.
+- Ein gültiges Feld zählt für die Energiekosten auch dann mit, wenn die Aktion seinen Zustand nicht mehr verändert, beispielsweise beim erneuten Bewässern eines bereits nassen Feldes.
+- Sind sämtliche Zielfelder ungültig, wird keine Aktion ausgeführt und keine Energie verbraucht.
+- Das Bewässern eines leeren Ackerfeldes setzt dessen Drei-Tage-Zähler nicht zurück. Nur eine vorhandene Pflanze verhindert das automatische Zurücksetzen zu normalem Boden.
+
 ## 10. Welt und Areale
 
 ### Areale im Grundspiel
