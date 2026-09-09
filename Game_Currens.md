@@ -278,7 +278,13 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
   4. Stahl
 - **Axt, Spitzhacke, Hacke und Gießkanne** verwenden diese vier Verbesserungsstufen.
 - Höhere Werkzeugstufen sollen die jeweilige Aktion beschleunigen und ihren Energieverbrauch senken.
-- Die **Gießkanne** bewässert mit jeder höheren Materialstufe mehr Felder gleichzeitig. Die genaue Anzahl und Anordnung der bewässerten Felder pro Stufe ist noch offen.
+- Die **Gießkanne** bewässert abhängig von ihrer Materialstufe folgende Fläche:
+  1. Kupfer (Stufe 1): **1 Feld**
+  2. Bronze (Stufe 2): **3 Felder** als 3×1-Reihe
+  3. Eisen (Stufe 3): **6 Felder** als 3×2-Fläche
+  4. Stahl (Stufe 4): **9 Felder** als 3×3-Fläche
+- Die Bewässerungsfläche liegt unmittelbar vor dem Spieler und dreht sich passend zu seiner Blickrichtung.
+- Mögliche spätere Gießkannenstufen vergrößern die Fläche nicht weiter, sondern senken ausschließlich den Energieverbrauch.
 - Die **Hacke** bearbeitet weiterhin das angezeigte einzelne 32×32-Feld, solange für sie keine andere Verbesserungswirkung festgelegt wurde.
 - Die genauen Zeit- und Energiewerte pro Stufe sind noch offen und werden vor der eigentlichen Balance festgelegt.
 - Die **Sichel** besitzt keine Verbesserungsstufen, da sie Gras unabhängig vom Material gleich schneidet.
@@ -302,9 +308,9 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
 - Die anfängliche Interaktionsreichweite beträgt **32 Pixel**, entsprechend einem Feld des 32 × 32-Pixel-Rasters.
 - Das nächstgelegene erreichbare Interaktionsobjekt wird sichtbar hervorgehoben.
 - Werkzeugaktionen und allgemeine Interaktionen bleiben getrennte Eingabeaktionen, damit später Touch- und Controller-Bedienung ergänzt werden können.
-- Ist die **Hacke**, **Gießkanne** oder **Schaufel** ausgewählt, erscheint direkt vor dem Spieler eine sichtbare Markierung in der Größe eines **32 × 32-Pixel-Rasterfeldes**.
+- Ist die **Hacke**, **Gießkanne** oder **Schaufel** ausgewählt, erscheint direkt vor dem Spieler eine sichtbare Zielmarkierung. Bei Hacke und Schaufel zeigt sie ein **32 × 32-Pixel-Rasterfeld**. Bei der Gießkanne zeigt sie abhängig von der Materialstufe alle Felder der aktuellen Bewässerungsfläche.
 - Alle drei Werkzeuge verwenden dasselbe allgemeine Zielfeldsystem. Die Markierung liegt unmittelbar am Feld des Spielers an und wechselt entsprechend seiner Blickrichtung nach oben, unten, links oder rechts.
-- Sie zeigt genau das Feld an, das beim nächsten Einsatz mit der linken Maustaste bearbeitet wird:
+- Sie zeigt genau das Feld beziehungsweise bei der Gießkanne alle Felder an, die beim nächsten Einsatz mit der linken Maustaste bearbeitet werden:
   - Hacke: Feld als Ackerboden bearbeiten
   - Gießkanne: Feld bewässern
   - Schaufel: Feld ausgraben beziehungsweise eine dafür vorgesehene Bodenaktion ausführen
