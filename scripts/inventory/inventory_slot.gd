@@ -9,7 +9,7 @@ func is_empty() -> bool:
 
 func set_stack(new_item_id: StringName, new_amount: int) -> void:
 	item_id = new_item_id
-	amount = max(new_amount, 0)
+	amount = maxi(new_amount, 0)
 	if amount == 0:
 		item_id = &""
 

@@ -134,7 +134,7 @@ func move_stack(from_container: StringName, from_index: int, to_container: Strin
 	if from_container == to_container and from_index == to_index:
 		return false
 
-	var move_amount := source.amount if amount < 0 else min(amount, source.amount)
+	var move_amount: int = source.amount if amount < 0 else mini(amount, source.amount)
 	if move_amount <= 0:
 		return false
 
@@ -145,7 +145,7 @@ func move_stack(from_container: StringName, from_index: int, to_container: Strin
 		var item := _item_database.get_item(source.item_id)
 		if item == null:
 			return false
-		var transferable := min(move_amount, item.get_stack_limit() - target.amount)
+		var transferable: int = mini(move_amount, item.get_stack_limit() - target.amount)
 		if transferable <= 0:
 			return false
 		target.amount += transferable
@@ -249,7 +249,7 @@ func _add_to_container(slots: Array[InventorySlot], item_id: StringName, amount:
 	for slot in slots:
 		if slot.item_id != item_id or slot.amount >= stack_limit:
 			continue
-		var added := min(remaining, stack_limit - slot.amount)
+		var added: int = mini(remaining, stack_limit - slot.amount)
 		slot.amount += added
 		remaining -= added
 		if remaining == 0:
@@ -258,7 +258,7 @@ func _add_to_container(slots: Array[InventorySlot], item_id: StringName, amount:
 	for slot in slots:
 		if not slot.is_empty():
 			continue
-		var added := min(remaining, stack_limit)
+		var added: int = mini(remaining, stack_limit)
 		slot.set_stack(item_id, added)
 		remaining -= added
 		if remaining == 0:
@@ -270,7 +270,7 @@ func _remove_from_container(slots: Array[InventorySlot], item_id: StringName, am
 	for slot in slots:
 		if slot.item_id != item_id:
 			continue
-		var removed := min(remaining, slot.amount)
+		var removed: int = mini(remaining, slot.amount)
 		slot.set_stack(item_id, slot.amount - removed)
 		remaining -= removed
 		if remaining == 0:
