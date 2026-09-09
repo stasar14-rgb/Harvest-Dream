@@ -180,9 +180,25 @@ Festgelegter Tagesablauf:
 - Nach einem erzwungenen Einschlafen wacht der Spieler erst um **08:00 Uhr** auf und verliert zusätzlich **20 % seiner Energie**.
 - Die Zeit pausiert in Menüs, während Dialogen sowie im eigenen Haus und in Häusern von NPCs.
 
+### Auswirkungen der Jahreszeiten
+
+- Im Frühling, Sommer und Herbst können Pflanzen im Freien wachsen.
+- Pflanzen können auf bestimmte Jahreszeiten begrenzt werden.
+- Beeren und andere Waldfrüchte können abhängig von der Jahreszeit unterschiedliche Vorkommen besitzen.
+- Pilze können im Frühling, Sommer und Herbst vorkommen.
+- Im Winter wachsen wegen des Schnees keine Pflanzen im Freien und es erscheinen keine Pilze.
+- Im Winter können stattdessen besondere Winterfrüchte im Wald vorkommen.
+- Ein Gewächshaus soll später Pflanzenwachstum im Winter ermöglichen.
+- Bestimmte Fischarten können nur in festgelegten Jahreszeiten gefangen werden.
+- NPC-Geburtstage werden einem bestimmten Tag und einer bestimmten Jahreszeit zugeordnet.
+- Im Winter soll der Energieverbrauch bestimmter Tätigkeiten erhöht sein.
+- Später kann warme Kleidung den erhöhten Energieverbrauch im Winter verhindern.
+
 **Noch offen:**
 
-- jahreszeitabhängige Pflanzen, Ressourcen und Ereignisse
+- genaue Pflanzen, Beeren, Winterfrüchte und Fische pro Jahreszeit
+- Höhe des zusätzlichen Energieverbrauchs im Winter
+- notwendiger Wärmewert der Kleidung
 
 ## 9. Werkzeuge
 
