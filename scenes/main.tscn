@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="PackedScene" path="res://scenes/test_area.tscn" id="2_test_area"]
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="3_player"]
+[ext_resource type="Script" path="res://scripts/game_calendar.gd" id="4_calendar"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_main")
+
+[node name="GameCalendar" type="Node" parent="."]
+script = ExtResource("4_calendar")
 
 [node name="AreaContainer" type="Node2D" parent="."]
 
