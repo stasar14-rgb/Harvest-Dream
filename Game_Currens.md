@@ -145,6 +145,14 @@ Bis Level 50 ergibt die Verringerung insgesamt **25 Energiepunkte weniger Verbra
 
 ## 7. Energiesystem
 
+Der Spieler beginnt mit **100 maximaler Energie**. Nach normalem Schlaf wird die Energie vollständig bis zum aktuellen Maximalwert aufgefüllt.
+
+Geht der Spieler rechtzeitig schlafen, beginnt der nächste Tag mit voller Energie. Beim erzwungenen Einschlafen um 02:00 Uhr beginnt der nächste Tag nur mit **80 % der maximalen Energie**. Bei anfänglich 100 maximaler Energie sind das 80 Energie.
+
+Die maximale Energie kann später durch verschiedene Fortschritte und Inhalte erhöht werden. Die Strafe für zu spätes Schlafen bleibt dabei prozentual und beträgt weiterhin 20 % des jeweils aktuellen Maximalwertes.
+
+Im Winter kosten alle energieverbrauchenden Aktivitäten **25 % mehr Energie**. Aktive warme Kleidung verhindert diesen zusätzlichen Winterverbrauch vollständig.
+
 Der Spieler besitzt Energie, die durch die Ausübung von Berufen verbraucht wird.
 
 Beispiele für energieverbrauchende Berufsaktionen:
