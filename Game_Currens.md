@@ -270,12 +270,16 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
 ### Haltbarkeit und Verbesserungsstufen
 
 - Werkzeuge besitzen **keine Haltbarkeit**, gehen nicht kaputt und müssen nicht repariert werden.
-- Die anfänglich vorgesehenen Materialstufen für verbesserbare Werkzeuge sind:
+- Der Spieler beginnt bei verbesserbaren Werkzeugen mit der Stufe **Kupfer**. Eine zusätzliche Werkzeugstufe vor Kupfer ist nicht vorgesehen.
+- Die Materialstufen für verbesserbare Werkzeuge sind:
   1. Kupfer
   2. Bronze
   3. Eisen
   4. Stahl
-- Welche Werkzeuge diese Stufen verwenden und welche Werte sich je Stufe verbessern, wird vor dem Einbau der Verbesserungen noch einzeln festgelegt.
+- **Axt, Spitzhacke, Hacke und Gießkanne** verwenden diese vier Verbesserungsstufen.
+- Höhere Werkzeugstufen sollen die jeweilige Aktion beschleunigen und ihren Energieverbrauch senken.
+- Für Hacke und Gießkanne ist derzeit keine Vergrößerung der bearbeiteten Fläche festgelegt. Sie bearbeiten weiterhin das angezeigte einzelne 32×32-Feld.
+- Die genauen Zeit- und Energiewerte pro Stufe sind noch offen und werden vor der eigentlichen Balance festgelegt.
 - Die **Sichel** besitzt keine Verbesserungsstufen, da sie Gras unabhängig vom Material gleich schneidet.
 - Die **Schaufel** besitzt keine Verbesserungsstufen, da sie ausschließlich ein Loch beziehungsweise eine dafür vorgesehene Bodenstelle gräbt.
 
