@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="ItemCatalog" load_steps=6 format=3]
+[gd_resource type="Resource" script_class="ItemCatalog" format=3 uid="uid://cubb8ir27s6b4"]
 
-[ext_resource type="Script" path="res://scripts/items/item_catalog.gd" id="1_catalog"]
-[ext_resource type="Script" path="res://scripts/items/item_data.gd" id="2_item_data"]
+[ext_resource type="Script" uid="uid://dcyupc4skebrh" path="res://scripts/items/item_catalog.gd" id="1_catalog"]
+[ext_resource type="Script" uid="uid://dlmnqvvgvop42" path="res://scripts/items/item_data.gd" id="2_item_data"]
 [ext_resource type="Resource" path="res://data/items/wood.tres" id="3_wood"]
 [ext_resource type="Resource" path="res://data/items/ore.tres" id="4_ore"]
-[ext_resource type="Resource" path="res://data/items/berries.tres" id="5_berries"]
+[ext_resource type="Resource" uid="uid://cx3lyror51rfj" path="res://data/items/berries.tres" id="5_berries"]
 
 [resource]
 script = ExtResource("1_catalog")

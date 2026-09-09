@@ -1,35 +1,33 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene format=3 uid="uid://cwxpx85134bk4"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://bk76l7jsle18f" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="PackedScene" path="res://scenes/test_area.tscn" id="2_test_area"]
-[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="3_player"]
-[ext_resource type="Script" path="res://scripts/game_calendar.gd" id="4_calendar"]
-[ext_resource type="Script" path="res://scripts/season_system.gd" id="5_season"]
-[ext_resource type="Script" path="res://scripts/player_energy.gd" id="6_energy"]
-[ext_resource type="Script" path="res://scripts/items/item_database.gd" id="7_item_database"]
+[ext_resource type="PackedScene" uid="uid://psjn2ydmjvh3" path="res://scenes/player/player.tscn" id="3_player"]
+[ext_resource type="Script" uid="uid://e4krah00osdq" path="res://scripts/game_calendar.gd" id="4_calendar"]
+[ext_resource type="Script" uid="uid://de8a8dg7y80ff" path="res://scripts/season_system.gd" id="5_season"]
+[ext_resource type="Script" uid="uid://b3afo0bmm28yr" path="res://scripts/player_energy.gd" id="6_energy"]
+[ext_resource type="Script" uid="uid://do31akhcte8x7" path="res://scripts/items/item_database.gd" id="7_item_database"]
 [ext_resource type="Resource" path="res://data/items/item_catalog.tres" id="8_item_catalog"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=1967308786]
 script = ExtResource("1_main")
 
-[node name="GameCalendar" type="Node" parent="." groups=["game_calendar"]]
+[node name="GameCalendar" type="Node" parent="." unique_id=500083981 groups=["game_calendar"]]
 script = ExtResource("4_calendar")
 
-[node name="SeasonSystem" type="Node" parent="." groups=["season_system"]]
+[node name="SeasonSystem" type="Node" parent="." unique_id=604717578 groups=["season_system"]]
 script = ExtResource("5_season")
-calendar_path = NodePath("../GameCalendar")
 
-[node name="PlayerEnergy" type="Node" parent="." groups=["player_energy"]]
+[node name="PlayerEnergy" type="Node" parent="." unique_id=812807113 groups=["player_energy"]]
 script = ExtResource("6_energy")
-calendar_path = NodePath("../GameCalendar")
-season_system_path = NodePath("../SeasonSystem")
 
-[node name="ItemDatabase" type="Node" parent="." groups=["item_database"]]
+[node name="ItemDatabase" type="Node" parent="." unique_id=988090513 groups=["item_database"]]
 script = ExtResource("7_item_database")
 catalog = ExtResource("8_item_catalog")
 
-[node name="AreaContainer" type="Node2D" parent="."]
+[node name="AreaContainer" type="Node2D" parent="." unique_id=328604731]
 
-[node name="TestArea" parent="AreaContainer" instance=ExtResource("2_test_area")]
+[node name="TestArea" parent="AreaContainer" unique_id=603704545 instance=ExtResource("2_test_area")]
 
-[node name="Player" parent="." instance=ExtResource("3_player")]
+[node name="Player" parent="." unique_id=1118932975 instance=ExtResource("3_player")]
+move_speed = 200.0
