@@ -3,6 +3,8 @@ extends Node2D
 
 signal area_change_requested(target_area_path: String, target_spawn_id: StringName)
 
+@export var area_id: StringName = &""
+@export var display_name: String = ""
 @export var camera_bounds: Rect2i = Rect2i(0, 0, 640, 360)
 @export var default_spawn_id: StringName = &"default"
 
@@ -16,6 +18,23 @@ func _ready() -> void:
 	for child in transitions.get_children():
 		if child is AreaTransition:
 			child.transition_requested.connect(_on_transition_requested)
+
+func has_valid_identity() -> bool:
+	if area_id == &"":
+		push_error("Im Areal '%s' fehlt die area_id." % name)
+		return false
+
+	if display_name.is_empty():
+		push_error("Im Areal '%s' fehlt der sichtbare Name." % name)
+		return false
+
+	return true
+
+func get_area_id() -> StringName:
+	return area_id
+
+func get_display_name() -> String:
+	return display_name
 
 func get_camera_bounds() -> Rect2i:
 	return camera_bounds

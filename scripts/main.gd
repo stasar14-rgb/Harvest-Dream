@@ -1,5 +1,12 @@
 extends Node
 
+signal area_changed(
+	area_id: StringName,
+	display_name: String,
+	area_path: String,
+	spawn_id: StringName
+)
+
 @export var start_spawn_id: StringName = &"default"
 
 @onready var area_container: Node2D = $AreaContainer
@@ -7,6 +14,11 @@ extends Node
 @onready var player_camera: Camera2D = $Player/Camera2D
 
 var current_area: GameArea
+var current_area_id: StringName = &""
+var current_area_name: String = ""
+var current_area_path: String = ""
+var current_spawn_id: StringName = &""
+
 var _area_change_in_progress := false
 
 func _ready() -> void:
@@ -19,8 +31,12 @@ func _ready() -> void:
 		push_error("Das geladene Areal verwendet nicht die GameArea-Grundlage.")
 		return
 
+	if not current_area.has_valid_identity():
+		return
+
 	_configure_area(current_area)
-	place_player_at_spawn(start_spawn_id)
+	if place_player_at_spawn(start_spawn_id):
+		_update_current_location(start_spawn_id)
 
 func place_player_at_spawn(spawn_id: StringName = &"") -> bool:
 	if current_area == null:
@@ -65,6 +81,11 @@ func _perform_area_change(target_area_path: String, target_spawn_id: StringName)
 		_area_change_in_progress = false
 		return
 
+	if not next_area.has_valid_identity():
+		next_area.free()
+		_area_change_in_progress = false
+		return
+
 	area_container.add_child(next_area)
 
 	var target_spawn := next_area.get_spawn_point(target_spawn_id)
@@ -83,7 +104,21 @@ func _perform_area_change(target_area_path: String, target_spawn_id: StringName)
 		area_container.remove_child(previous_area)
 		previous_area.queue_free()
 
+	_update_current_location(target_spawn_id, target_area_path)
 	_area_change_in_progress = false
+
+func _update_current_location(spawn_id: StringName, area_path: String = "") -> void:
+	current_area_id = current_area.get_area_id()
+	current_area_name = current_area.get_display_name()
+	current_area_path = area_path if not area_path.is_empty() else current_area.scene_file_path
+	current_spawn_id = spawn_id
+
+	area_changed.emit(
+		current_area_id,
+		current_area_name,
+		current_area_path,
+		current_spawn_id
+	)
 
 func _configure_area(area: GameArea) -> void:
 	_apply_camera_bounds(area.get_camera_bounds())
