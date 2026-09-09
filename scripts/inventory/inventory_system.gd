@@ -17,7 +17,7 @@ const ACTION_BAR_SLOTS := 10
 
 ## Fügt beim Start einige Kataloggegenstände ein, damit die Inventarbedienung auf der Testfläche geprüft werden kann.
 @export var add_debug_starting_items: bool = true
-## Legt vier Werkzeuge zum Prüfen der Werkzeugauswahl direkt in die ersten Plätze der Aktionsleiste.
+## Legt fünf Werkzeuge zum Prüfen der Werkzeug- und Bodenaktionen direkt in die ersten Plätze der Aktionsleiste.
 @export var add_debug_starting_tools: bool = true
 ## Goldkosten der beiden Taschenerweiterungen. Der Wert -1 bedeutet, dass der Preis noch nicht festgelegt wurde.
 @export var bag_upgrade_costs: Array[int] = [-1, -1]
@@ -50,6 +50,7 @@ func _ready() -> void:
 		_set_debug_action_tool(1, &"hoe_bronze")
 		_set_debug_action_tool(2, &"watering_can_iron")
 		_set_debug_action_tool(3, &"watering_can_steel")
+		_set_debug_action_tool(4, &"shovel")
 
 func get_inventory_capacity() -> int:
 	return STARTING_INVENTORY_SLOTS + purchased_bag_upgrades * SLOTS_PER_UPGRADE
