@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://de8a8dg7y80ff" path="res://scripts/season_system.gd" id="5_season"]
 [ext_resource type="Script" uid="uid://b3afo0bmm28yr" path="res://scripts/player_energy.gd" id="6_energy"]
 [ext_resource type="Script" uid="uid://do31akhcte8x7" path="res://scripts/items/item_database.gd" id="7_item_database"]
-[ext_resource type="Resource" path="res://data/items/item_catalog.tres" id="8_item_catalog"]
+[ext_resource type="Resource" uid="uid://cubb8ir27s6b4" path="res://data/items/item_catalog.tres" id="8_item_catalog"]
 
 [node name="Main" type="Node" unique_id=1967308786]
 script = ExtResource("1_main")
