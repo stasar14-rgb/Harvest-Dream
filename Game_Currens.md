@@ -322,6 +322,90 @@ Das Projekt muss so aufgebaut werden, dass spätere Änderungen keine unnötigen
 - späteres Kampfsystem
 - spätere Tierhaltung
 
+## 14. Assets Maße
+
+Das Grundspiel verwendet ein **32×32-Pixel-Raster**. Nicht jedes Objekt muss selbst 32×32 Pixel groß sein. Positionen, Türen, Wege und begehbare Flächen müssen jedoch sauber zum Raster passen.
+
+### Notwendige Asset-Größen
+
+| Asset | Größe pro Bild oder Frame | Tatsächlich sichtbare Größe |
+|---|---:|---:|
+| Boden, Gras, Wege und Wasser | 32×32 px | vollständig |
+| Übergänge und Kartenränder | 32×32 px | vollständig |
+| Klippen und niedrige Wände | 32×32 px | vollständig |
+| hohe Innenwände | 32×64 px | vollständig |
+| Spieler | 48×48 px Frame | ungefähr 22×28 px |
+| normale NPCs | 48×48 px Frame | ungefähr 22×28 px |
+| Werkzeuganimationen | innerhalb des 48×48-Charakterframes | dürfen über den Körper hinausragen |
+| kleine Pflanzen und Blumen | 32×32 px | etwa 8×8 bis 24×24 px |
+| Nutzpflanzen | 32×32 px je Wachstumsstufe | maximal etwa 28×30 px |
+| Beerenbusch | 32×32 px | etwa 28×30 px |
+| normaler Busch | 32×32 px | maximal 32×32 px |
+| Baum | 64×96 px | Stamm mittig über einem Feld |
+| Baumstumpf | 32×32 px | ungefähr 24×20 px |
+| kleiner Stein | 32×32 px | etwa 12×10 px |
+| abbaubarer Felsen | 32×32 px | etwa 28×26 px |
+| Erzvorkommen | 32×32 px | etwa 28×26 px |
+| Holzstamm | 64×32 px | ungefähr 56×22 px |
+| aufhebbare Gegenstände | 32×32 px | ungefähr 12×12 bis 24×24 px |
+| Truhe | 32×32 px | ungefähr 28×24 px |
+| Tür | 32×48 px | Durchgang 32 px breit |
+| Zaun und Tor | 32×32 px je Teil | vollständig |
+| kleines Möbelstück | 32×32 px | passend zum Objekt |
+| breites Möbelstück | 64×32 px | zwei Felder breit |
+| hohes Möbelstück | 32×64 px | ein Feld breit |
+| normales Wohnhaus | 160×128 px | Grundfläche ungefähr 5×4 Felder |
+| Hauszustände | immer 160×128 px | zerstört, im Bau und repariert gleich groß |
+| Gegenstands- und Werkzeugicons | 32×32 px | ungefähr 24×24 bis 28×28 px |
+| Berufsicons | 32×32 px | ungefähr 26×26 px |
+| Kartenmarkierungen | 16×16 px | vollständig |
+| NPC-Porträts | 64×64 px | Kopf und Oberkörper |
+| kleine Effekte | 32×32 px pro Frame | Staub, Treffer und Blätter |
+
+### Charakter und Animationen
+
+Der sichtbare Charakter ist ungefähr **22×28 Pixel** groß. Der zugehörige Animationsframe ist **48×48 Pixel** groß.
+
+- Der Charakter wird unten mittig im Frame ausgerichtet.
+- Der zusätzliche freie Platz wird für Axt, Spitzhacke, Sichel und andere Werkzeugbewegungen verwendet.
+- Werkzeuge dürfen bei einer Animation über den Körper hinausragen.
+- Spieler und normale NPCs verwenden dieselbe Framegröße.
+- Die größere Framefläche verändert nicht die sichtbare Größe des Charakters.
+
+### Ausrichtung am Raster
+
+- Die Füße des Charakters stehen mittig auf einem 32×32-Feld.
+- Türen sind grundsätzlich 32 Pixel breit.
+- Wege sind mindestens 32 Pixel breit.
+- Häuser und größere Objekte werden in 32-Pixel-Schritten platziert.
+- Baumkronen und Häuser dürfen mehrere Felder sichtbar überdecken.
+- Kollisionen liegen nur an den tatsächlich blockierenden Bereichen und nicht über dem gesamten sichtbaren Bild.
+- Für den Spieler ist zunächst eine Kollisionsfläche von ungefähr **14×12 Pixeln an den Füßen** vorgesehen. Dieser Wert kann nach einem Spieltest angepasst werden.
+
+### Sprite-Sheets
+
+Die Gesamtgröße eines Sprite-Sheets ist nicht fest vorgegeben. Die einzelnen Frames bleiben einheitlich:
+
+- Charaktere: 48×48 px pro Frame
+- Pflanzen: 32×32 px pro Wachstumsstufe
+- Gegenstände und kleine Effekte: 32×32 px pro Frame
+- Bäume: 64×96 px pro Frame
+
+### Verwendete Standardgrößen
+
+Für das Grundspiel werden zunächst nur diese Standardgrößen verwendet:
+
+- 16×16 px
+- 32×32 px
+- 48×48 px
+- 64×32 px
+- 32×64 px
+- 64×64 px
+- 64×96 px
+- 160×128 px
+
+Weitere Größen werden erst ergänzt, wenn ein notwendiges Asset mit diesen Standards nicht sinnvoll umgesetzt werden kann.
+
 ## Aktueller Entwicklungsfokus
 
 Zuerst wird ein kleines, stabiles Grundspiel aufgebaut. Der Fokus liegt auf den Kernsystemen und einer sauberen Struktur. Umfangreiche Inhalte, zusätzliche Berufe und spätere Erweiterungen werden erst eingefügt, wenn das Fundament zuverlässig funktioniert.
