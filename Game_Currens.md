@@ -267,6 +267,29 @@ Festgelegter Tagesablauf:
 
 Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angelegt werden. Dadurch können neue Werkzeuge, Werte, Verbesserungen und Aktionen später ergänzt oder geändert werden.
 
+### Haltbarkeit und Verbesserungsstufen
+
+- Werkzeuge besitzen **keine Haltbarkeit**, gehen nicht kaputt und müssen nicht repariert werden.
+- Die anfänglich vorgesehenen Materialstufen für verbesserbare Werkzeuge sind:
+  1. Kupfer
+  2. Bronze
+  3. Eisen
+  4. Stahl
+- Welche Werkzeuge diese Stufen verwenden und welche Werte sich je Stufe verbessern, wird vor dem Einbau der Verbesserungen noch einzeln festgelegt.
+- Die **Sichel** besitzt keine Verbesserungsstufen, da sie Gras unabhängig vom Material gleich schneidet.
+- Die **Schaufel** besitzt keine Verbesserungsstufen, da sie ausschließlich ein Loch beziehungsweise eine dafür vorgesehene Bodenstelle gräbt.
+
+### Erze und Barren
+
+- Kupferbarren: **3 Kupfererz = 1 Kupferbarren**
+- Bronzebarren: **2 Kupfererz + 1 Zinnerz = 1 Bronzebarren**
+- Eisenbarren: **3 Eisenerz + 1 Kohle = 1 Eisenbarren**
+- Stahlbarren: **3 Eisenerz + 2 Kohle = 1 Stahlbarren**
+- Silberbarren: **3 Silbererz = 1 Silberbarren**
+- Goldbarren: **3 Golderz = 1 Goldbarren**
+- Silber- und Goldbarren sind für Schmuck und weitere spätere Gegenstände vorgesehen, nicht als anfängliche Werkzeugstufen.
+- Diese Mengen sind die festgelegten Grundrezepte. Das eigentliche Schmelz- und Herstellungssystem wird in einem späteren Schritt gebaut.
+
 ### Bedienung und allgemeine Interaktion
 
 - Werkzeuge werden auf dem PC mit der **linken Maustaste** benutzt.
