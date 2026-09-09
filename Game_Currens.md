@@ -20,8 +20,8 @@ Diese Datei enthält den aktuell gültigen Konzeptstand von **Harvest Dream**.
 - Grundlage der Spielwelt ist ein **32 × 32 Pixel** großes Raster. Geländekacheln sind 32 × 32 Pixel groß.
 - Die Richtgröße für den Spielercharakter beträgt ungefähr **32 × 48 Pixel**.
 - Die Darstellung erfolgt im **Querformat mit einem Seitenverhältnis von 16:9**.
-- Die interne Basisauflösung beträgt **640 × 360 Pixel**. Das PC-Testfenster startet mit **1280 × 720 Pixeln**.
-- Pixelgrafiken werden ohne Glättung dargestellt und möglichst ganzzahlig skaliert.
+- Die interne Basisauflösung und das PC-Testfenster betragen **1280 × 720 Pixel**.
+- Pixelgrafiken werden ohne Glättung dargestellt. Die Spielwelt verwendet einen **2×-Kamerazoom**, damit das 32×32-Pixel-Raster und die Figuren trotz der höheren Basisauflösung in der vorgesehenen sichtbaren Größe erscheinen.
 - Die Benutzeroberfläche wird später über Anker und flexible Container an unterschiedliche Bildschirmgrößen angepasst.
 - Die erste PC-Steuerung verwendet **WASD** für die Bewegung und die **Maus** für Werkzeuge, Aktionen, Platzierung und Menüs.
 - Touch-Eingaben für Handys und optionale Controller-Unterstützung werden später über dasselbe allgemeine Eingabesystem ergänzt.

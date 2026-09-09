@@ -114,7 +114,7 @@ func _open_quantity_dialog(container_id: StringName, slot_index: int) -> void:
 		return
 	quantity_spin_box.max_value = slot.amount - 1
 	quantity_spin_box.value = 1
-	quantity_dialog.popup_centered(Vector2i(300, 140))
+	quantity_dialog.popup_centered(Vector2i(420, 180))
 
 func _on_quantity_confirmed() -> void:
 	_inventory_system.split_amount(_quantity_source_container, _quantity_source_index, int(quantity_spin_box.value))

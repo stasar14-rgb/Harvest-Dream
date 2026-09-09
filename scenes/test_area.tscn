@@ -24,13 +24,13 @@ layer = 10
 [node name="TimeLabel" type="Label" parent="DebugTimeLayer"]
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 260.0
-offset_bottom = 130.0
+offset_right = 520.0
+offset_bottom = 220.0
 mouse_filter = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 10
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 16
 text = "Kalender wird geladen ..."
 script = ExtResource("4_debug_time")
 

@@ -31,3 +31,4 @@ interaction_range = 48.0
 shape = SubResource("CircleShape2D_interaction")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=590677019]
+zoom = Vector2(2, 2)
