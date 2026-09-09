@@ -224,6 +224,14 @@ Festgelegter Tagesablauf:
 
 Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angelegt werden. Dadurch können neue Werkzeuge, Werte, Verbesserungen und Aktionen später ergänzt oder geändert werden.
 
+### Bedienung und allgemeine Interaktion
+
+- Werkzeuge werden auf dem PC mit der **linken Maustaste** benutzt.
+- Gespräche mit NPCs sowie das Öffnen von Türen, Truhen und ähnlichen Objekten erfolgen mit der Taste **E**.
+- Die anfängliche Interaktionsreichweite beträgt **32 Pixel**, entsprechend einem Feld des 32 × 32-Pixel-Rasters.
+- Das nächstgelegene erreichbare Interaktionsobjekt wird sichtbar hervorgehoben.
+- Werkzeugaktionen und allgemeine Interaktionen bleiben getrennte Eingabeaktionen, damit später Touch- und Controller-Bedienung ergänzt werden können.
+
 ## 10. Welt und Areale
 
 ### Areale im Grundspiel

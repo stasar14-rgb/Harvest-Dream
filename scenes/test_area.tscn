@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://scripts/areas/game_area.gd" id="1_area"]
 [ext_resource type="PackedScene" path="res://scenes/areas/spawn_point.tscn" id="2_spawn_point"]
 [ext_resource type="PackedScene" path="res://scenes/areas/area_transition.tscn" id="3_transition"]
 [ext_resource type="Script" path="res://scripts/debug_time_display.gd" id="4_debug_time"]
+[ext_resource type="PackedScene" path="res://scenes/interactions/interactable.tscn" id="5_interactable"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_horizontal"]
 size = Vector2(1280, 16)
@@ -102,3 +103,10 @@ shape = SubResource("RectangleShape2D_vertical")
 [node name="Right" type="CollisionShape2D" parent="Boundaries"]
 position = Vector2(1264, 360)
 shape = SubResource("RectangleShape2D_vertical")
+
+[node name="TestInteractables" type="Node2D" parent="."]
+
+[node name="TestObject" parent="TestInteractables" instance=ExtResource("5_interactable")]
+position = Vector2(400, 180)
+interaction_name = "Testobjekt"
+debug_log_interactions = true
