@@ -3,10 +3,15 @@ extends Node2D
 
 signal area_change_requested(target_area_path: String, target_spawn_id: StringName)
 
+## Eindeutige interne ID des Areals. Nach Veröffentlichung nicht mehr ändern.
 @export var area_id: StringName = &""
+## Sichtbarer Name des Areals, der später in Karte und Oberfläche angezeigt wird.
 @export var display_name: String = ""
+## Pausiert die Spielzeit in diesem Areal, zum Beispiel in Häusern.
 @export var pauses_time: bool = false
+## Begrenzung, innerhalb der sich die Kamera in diesem Areal bewegen darf.
 @export var camera_bounds: Rect2i = Rect2i(0, 0, 640, 360)
+## Spawnpunkt, der verwendet wird, wenn keine andere Spawn-ID angegeben wurde.
 @export var default_spawn_id: StringName = &"default"
 
 @onready var spawn_points := get_node_or_null(^"SpawnPoints") as Node2D

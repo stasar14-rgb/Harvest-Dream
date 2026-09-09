@@ -3,6 +3,7 @@ extends Area2D
 
 signal focused_interactable_changed(interactable: Interactable)
 
+## Maximale Entfernung in Pixeln, aus der der Spieler ein Objekt mit E benutzen kann.
 @export_range(1.0, 256.0, 1.0) var interaction_range: float = 32.0
 
 var _candidates: Array[Interactable] = []

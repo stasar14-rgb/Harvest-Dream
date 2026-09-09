@@ -7,6 +7,7 @@ signal area_changed(
 	spawn_id: StringName
 )
 
+## Spawnpunkt, an dem der Spieler beim Start eines neuen Spiels erscheint.
 @export var start_spawn_id: StringName = &"default"
 
 @onready var game_calendar: GameCalendar = $GameCalendar

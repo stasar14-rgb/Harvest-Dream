@@ -1,6 +1,7 @@
 class_name ItemDatabase
 extends Node
 
+## Gegenstandskatalog, aus dem die zentrale Datenbank ihre Einträge lädt.
 @export var catalog: ItemCatalog
 
 func _ready() -> void:

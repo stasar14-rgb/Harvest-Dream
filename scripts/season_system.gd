@@ -9,6 +9,7 @@ signal season_rules_changed(
 	warm_clothing_required: bool
 )
 
+## Pfad zum Kalender, aus dem die aktuelle Jahreszeit gelesen wird.
 @export var calendar_path: NodePath = ^"../GameCalendar"
 
 @onready var _calendar := get_node_or_null(calendar_path) as GameCalendar

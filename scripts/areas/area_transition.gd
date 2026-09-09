@@ -3,8 +3,11 @@ extends Area2D
 
 signal transition_requested(target_area_path: String, target_spawn_id: StringName)
 
+## Zielkarte, die beim Betreten dieses Übergangs geladen wird.
 @export_file("*.tscn") var target_area_path: String = ""
+## ID des Spawnpunkts, an dem der Spieler in der Zielkarte erscheint.
 @export var target_spawn_id: StringName = &"default"
+## Bestimmt, ob dieser Arealübergang momentan benutzt werden kann.
 @export var transition_enabled: bool = true
 
 var _request_sent := false
