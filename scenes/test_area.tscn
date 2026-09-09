@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" path="res://scenes/areas/area_transition.tscn" id="3_transition"]
 [ext_resource type="Script" path="res://scripts/debug_time_display.gd" id="4_debug_time"]
 [ext_resource type="PackedScene" path="res://scenes/interactions/interactable.tscn" id="5_interactable"]
+[ext_resource type="Script" path="res://scripts/farming/soil_system.gd" id="6_soil_system"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_horizontal"]
 size = Vector2(1280, 16)
@@ -62,6 +63,11 @@ target_spawn_id = &"from_left"
 [node name="Floor" type="Polygon2D" parent="."]
 color = Color(0.18, 0.26, 0.16, 1)
 polygon = PackedVector2Array(0, 0, 1280, 0, 1280, 720, 0, 720)
+
+[node name="SoilSystem" type="Node2D" parent="." groups=["soil_system"]]
+z_index = 1
+script = ExtResource("6_soil_system")
+tillable_area = Rect2i(2, 2, 36, 18)
 
 [node name="LeftTransitionVisual" type="Polygon2D" parent="."]
 color = Color(0.15, 0.65, 1, 0.35)

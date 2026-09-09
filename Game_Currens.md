@@ -352,6 +352,7 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
 - Welche Bodenfelder bearbeitbar sind, wird später pro Karte beziehungsweise Bodenart festgelegt.
 - Enthält eine Mehrfeldaktion sowohl gültige als auch ungültige Zielfelder, werden ausschließlich die gültigen Felder bearbeitet.
 - Die Energiekosten werden proportional zur Anzahl gültiger Zielfelder angepasst: Grundkosten der gewählten Aufladestufe × gültige Felder ÷ alle Zielfelder der Aufladestufe.
+- Das proportionale Ergebnis wird mathematisch auf den nächsten **0,5-Energiewert** gerundet.
 - Ein gültiges Feld zählt für die Energiekosten auch dann mit, wenn die Aktion seinen Zustand nicht mehr verändert, beispielsweise beim erneuten Bewässern eines bereits nassen Feldes.
 - Sind sämtliche Zielfelder ungültig, wird keine Aktion ausgeführt und keine Energie verbraucht.
 - Das Bewässern eines leeren Ackerfeldes setzt dessen Drei-Tage-Zähler nicht zurück. Nur eine vorhandene Pflanze verhindert das automatische Zurücksetzen zu normalem Boden.
