@@ -277,7 +277,13 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
   3. Eisen
   4. Stahl
 - **Axt, Spitzhacke, Hacke und Gießkanne** verwenden diese vier Verbesserungsstufen.
-- Bei **Axt und Spitzhacke** werden mit jeder höheren Materialstufe weniger Schläge für die jeweilige Ressource benötigt und der Energieverbrauch sinkt.
+- Bei **Axt und Spitzhacke** erhält jede Ressource eine Grund-Schlagzahl für ein Kupferwerkzeug. Jede höhere Materialstufe benötigt genau einen Schlag weniger:
+  - Kupfer: Grund-Schlagzahl der Ressource
+  - Bronze: Grund-Schlagzahl − 1
+  - Eisen: Grund-Schlagzahl − 2
+  - Stahl: Grund-Schlagzahl − 3
+- Unabhängig von der Werkzeugstufe bleibt mindestens **ein Schlag** notwendig. Dadurch können verschiedene Bäume, Steine und Erze eigene Grund-Schlagzahlen besitzen.
+- Zusätzlich sinkt mit jeder höheren Materialstufe der Energieverbrauch von Axt und Spitzhacke.
 - **Hacke und Gießkanne** verwenden dieselben freischaltbaren Bearbeitungsflächen:
   1. Kupfer (Stufe 1): **1 Feld**
   2. Bronze (Stufe 2): **3 Felder** als 3×1-Reihe
@@ -296,7 +302,7 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
 - Die Bearbeitungsfläche liegt unmittelbar vor dem Spieler und dreht sich passend zu seiner Blickrichtung.
 - Mit jeder höheren Materialstufe sinkt außerdem der Energieverbrauch von Hacke und Gießkanne.
 - Mögliche spätere Werkzeugstufen vergrößern die Fläche nicht über 3×3 hinaus, sondern senken ausschließlich den Energieverbrauch.
-- Die genaue Anzahl benötigter Schläge für Axt und Spitzhacke sowie die Energiewerte aller Werkzeugstufen sind noch offen und werden vor der eigentlichen Balance festgelegt.
+- Die Grund-Schlagzahlen der einzelnen Bäume, Steine und Erze sowie die Energiewerte der Werkzeugstufen sind noch offen und werden vor der eigentlichen Balance festgelegt.
 - Die **Sichel** besitzt keine Verbesserungsstufen, da sie Gras unabhängig vom Material gleich schneidet.
 - Die **Schaufel** besitzt keine Verbesserungsstufen, da sie ausschließlich ein Loch beziehungsweise eine dafür vorgesehene Bodenstelle gräbt.
 
