@@ -1,0 +1,118 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/inventory/inventory_ui.gd" id="1_inventory_ui"]
+
+[node name="InventoryUI" type="CanvasLayer"]
+script = ExtResource("1_inventory_ui")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="InventoryPanel" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -155.0
+offset_right = 190.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+
+[node name="Margin" type="MarginContainer" parent="Root/InventoryPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="Root/InventoryPanel/Margin"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Root/InventoryPanel/Margin/VBox"]
+layout_mode = 2
+text = "Inventar"
+horizontal_alignment = 1
+
+[node name="Hint" type="Label" parent="Root/InventoryPanel/Margin/VBox"]
+layout_mode = 2
+text = "Ziehen: Verschieben | Umschalt+Links: Schnell | Umschalt+Rechts: Hälfte | Strg+Rechts: Anzahl"
+autowrap_mode = 2
+
+[node name="InventoryScroll" type="ScrollContainer" parent="Root/InventoryPanel/Margin/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 168)
+horizontal_scroll_mode = 0
+
+[node name="InventoryGrid" type="GridContainer" parent="Root/InventoryPanel/Margin/VBox/InventoryScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 8
+
+[node name="CloseHint" type="Label" parent="Root/InventoryPanel/Margin/VBox"]
+layout_mode = 2
+text = "B: Inventar schließen"
+horizontal_alignment = 1
+
+[node name="ActionBar" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -230.0
+offset_top = -54.0
+offset_right = 230.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 0
+
+[node name="Margin" type="MarginContainer" parent="Root/ActionBar"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ActionBarGrid" type="GridContainer" parent="Root/ActionBar/Margin"]
+layout_mode = 2
+columns = 10
+
+[node name="MessageLabel" type="Label" parent="Root"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 48.0
+offset_bottom = 78.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.2, 1)
+text = "Inventar voll"
+horizontal_alignment = 1
+
+[node name="QuantityDialog" type="ConfirmationDialog" parent="."]
+title = "Stapel teilen"
+dialog_text = "Wie viele Gegenstände sollen in einen neuen Platz abgetrennt werden?"
+ok_button_text = "Teilen"
+cancel_button_text = "Abbrechen"
+
+[node name="QuantitySpinBox" type="SpinBox" parent="QuantityDialog"]
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 292.0
+offset_bottom = 86.0
+min_value = 1.0
+value = 1.0
+allow_greater = false
+allow_lesser = false

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cwxpx85134bk4"]
+[gd_scene load_steps=11 format=3 uid="uid://cwxpx85134bk4"]
 
 [ext_resource type="Script" uid="uid://bk76l7jsle18f" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="PackedScene" path="res://scenes/test_area.tscn" id="2_test_area"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://b3afo0bmm28yr" path="res://scripts/player_energy.gd" id="6_energy"]
 [ext_resource type="Script" uid="uid://do31akhcte8x7" path="res://scripts/items/item_database.gd" id="7_item_database"]
 [ext_resource type="Resource" uid="uid://cubb8ir27s6b4" path="res://data/items/item_catalog.tres" id="8_item_catalog"]
+[ext_resource type="Script" path="res://scripts/inventory/inventory_system.gd" id="9_inventory"]
+[ext_resource type="PackedScene" path="res://scenes/ui/inventory_ui.tscn" id="10_inventory_ui"]
 
 [node name="Main" type="Node" unique_id=1967308786]
 script = ExtResource("1_main")
@@ -25,9 +27,14 @@ script = ExtResource("6_energy")
 script = ExtResource("7_item_database")
 catalog = ExtResource("8_item_catalog")
 
+[node name="InventorySystem" type="Node" parent="." groups=["inventory_system"]]
+script = ExtResource("9_inventory")
+
 [node name="AreaContainer" type="Node2D" parent="." unique_id=328604731]
 
 [node name="TestArea" parent="AreaContainer" unique_id=603704545 instance=ExtResource("2_test_area")]
 
 [node name="Player" parent="." unique_id=1118932975 instance=ExtResource("3_player")]
 move_speed = 200.0
+
+[node name="InventoryUI" parent="." instance=ExtResource("10_inventory_ui")]

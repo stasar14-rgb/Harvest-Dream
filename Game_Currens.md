@@ -104,6 +104,24 @@ Vorerst gelten folgende Standard-Stapelgrößen:
 
 Ein einzelner Gegenstand kann seine Standard-Stapelgröße überschreiben. Qualitätsstufen werden technisch vorbereitet, aber erst später als eigenes System umgesetzt.
 
+### Inventar und Aktionsleiste
+
+- Ein neuer Spielstand beginnt mit **16 Inventarplätzen**.
+- Die **10 Plätze der Aktionsleiste sind zusätzliche Gegenstandsplätze**. Damit stehen anfangs insgesamt 26 Plätze zur Verfügung.
+- Es gibt zwei kaufbare Taschenerweiterungen. Jede Erweiterung schaltet 16 weitere Inventarplätze frei.
+- Nach beiden Erweiterungen besitzt der Spieler 48 Inventarplätze und 10 Aktionsleistenplätze, insgesamt also 58 Plätze.
+- Die Goldkosten der beiden Erweiterungen werden später festgelegt.
+- Das Inventar wird auf dem PC mit **B** geöffnet und geschlossen.
+- Die Aktionsleiste kann mit den Zahlentasten **1 bis 9 und 0** sowie mit der Maus ausgewählt werden.
+- Gegenstände können mit gedrückter linker Maustaste zwischen Inventar- und Aktionsleistenplätzen verschoben werden.
+- **Umschalt + linke Maustaste** verschiebt einen vollständigen Stapel automatisch in den nächsten verfügbaren Platz des jeweils anderen Bereichs.
+- **Umschalt + rechte Maustaste** verschiebt die Hälfte eines Stapels in den jeweils anderen Bereich.
+- **Strg + rechte Maustaste** öffnet eine Mengenauswahl für die zu verschiebende Anzahl.
+- Bei Händlern soll Umschalt + linke Maustaste später den vollständigen angeklickten Stapel verkaufen.
+- Ist die gesamte verfügbare Kapazität voll, bleiben nicht aufnehmbare Gegenstände auf dem Boden liegen.
+- Käufe und Questabschlüsse mit Gegenstandsbelohnung werden bei fehlendem Platz verhindert und zeigen eine verständliche Meldung.
+- Ein fehlgeschlagener Einfügeversuch entfernt oder ersetzt niemals bereits vorhandene Gegenstände.
+
 ## 4. Dorfaufbau
 
 Die Siedlung beginnt als kleines **Dorf** mit **vier zerstörten und unbewohnten Häusern**. Durch den Wiederaufbau, neue Gebäude und einziehende Bewohner wächst das Dorf im späteren Spielverlauf zu einer **Stadt** heran.
