@@ -290,8 +290,9 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
   - dritte Aufladestufe: 9 Felder für **12,5 Energie**
 - Dies sind die vorläufigen Grundkosten vor späteren Verringerungen durch Werkzeugstufen oder Berufsboni und vor dem winterlichen Aufschlag.
 - Jede höhere Aufladestufe kostet mehr Energie, ist bezogen auf die Anzahl der gleichzeitig bearbeiteten Felder jedoch effizienter.
+- Jede zusätzliche Aufladestufe benötigt **1 Sekunde**. Ein kurzer Klick bearbeitet 1 Feld, nach 1 Sekunde werden 3 Felder, nach 2 Sekunden 6 Felder und nach 3 Sekunden 9 Felder erreicht.
 - Die maximal erreichbare Aufladestufe wird durch die aktuelle Materialstufe des Werkzeugs begrenzt. Längeres Gedrückthalten überschreitet die bereits freigeschaltete Fläche nicht.
-- Während des Aufladens wächst die Zielmarkierung sichtbar auf die jeweils erreichte Fläche. Beim Loslassen wird genau die angezeigte Fläche bearbeitet.
+- Während des Aufladens wächst die Zielmarkierung nach jeder erreichten Sekunde sichtbar auf die neue Fläche. Beim Loslassen wird genau die angezeigte Fläche bearbeitet.
 - Die Bearbeitungsfläche liegt unmittelbar vor dem Spieler und dreht sich passend zu seiner Blickrichtung.
 - Mit jeder höheren Materialstufe sinkt außerdem der Energieverbrauch von Hacke und Gießkanne.
 - Mögliche spätere Werkzeugstufen vergrößern die Fläche nicht über 3×3 hinaus, sondern senken ausschließlich den Energieverbrauch.
