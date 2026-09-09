@@ -3,11 +3,13 @@ extends Label
 var _calendar: GameCalendar
 var _season_system: SeasonSystem
 var _player_energy: PlayerEnergy
+var _item_database: ItemDatabase
 
 func _ready() -> void:
 	_calendar = get_tree().get_first_node_in_group(&"game_calendar") as GameCalendar
 	_season_system = get_tree().get_first_node_in_group(&"season_system") as SeasonSystem
 	_player_energy = get_tree().get_first_node_in_group(&"player_energy") as PlayerEnergy
+	_item_database = get_tree().get_first_node_in_group(&"item_database") as ItemDatabase
 
 	if _calendar == null:
 		push_error("Die Debug-Zeitanzeige findet keinen GameCalendar.")
@@ -19,6 +21,10 @@ func _ready() -> void:
 
 	if _player_energy == null:
 		push_error("Die Debug-Zeitanzeige findet keine PlayerEnergy.")
+		return
+
+	if _item_database == null:
+		push_error("Die Debug-Anzeige findet keine ItemDatabase.")
 		return
 
 	_calendar.time_changed.connect(_update_display)
@@ -62,11 +68,12 @@ func _update_text() -> void:
 		else:
 			season_rule_text = "Winter: kein Außenwachstum, Energiekosten +25 %"
 
-	text = "%s\n%s%s\nEnergie: %.1f / %.1f\n%s" % [
+	text = "%s\n%s%s\nEnergie: %.1f / %.1f\nKatalog: %d Gegenstände\n%s" % [
 		_calendar.get_date_text(),
 		_calendar.get_time_text(),
 		pause_text,
 		_player_energy.current_energy,
 		_player_energy.maximum_energy,
+		_item_database.get_item_count(),
 		season_rule_text,
 	]
