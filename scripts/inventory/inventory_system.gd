@@ -17,6 +17,8 @@ const ACTION_BAR_SLOTS := 10
 
 ## Fügt beim Start einige Kataloggegenstände ein, damit die Inventarbedienung auf der Testfläche geprüft werden kann.
 @export var add_debug_starting_items: bool = true
+## Legt vier Werkzeuge zum Prüfen der Werkzeugauswahl direkt in die ersten Plätze der Aktionsleiste.
+@export var add_debug_starting_tools: bool = true
 ## Goldkosten der beiden Taschenerweiterungen. Der Wert -1 bedeutet, dass der Preis noch nicht festgelegt wurde.
 @export var bag_upgrade_costs: Array[int] = [-1, -1]
 
@@ -42,6 +44,12 @@ func _ready() -> void:
 		try_add_item(&"wood", 50)
 		try_add_item(&"ore", 20)
 		try_add_item(&"berries", 10)
+
+	if add_debug_starting_tools:
+		_set_debug_action_tool(0, &"hoe_copper")
+		_set_debug_action_tool(1, &"hoe_bronze")
+		_set_debug_action_tool(2, &"watering_can_iron")
+		_set_debug_action_tool(3, &"watering_can_steel")
 
 func get_inventory_capacity() -> int:
 	return STARTING_INVENTORY_SLOTS + purchased_bag_upgrades * SLOTS_PER_UPGRADE
@@ -282,3 +290,12 @@ func _find_first_empty_slot(slots: Array[InventorySlot], excluded_index: int = -
 		if index != excluded_index and slots[index].is_empty():
 			return slots[index]
 	return null
+
+func _set_debug_action_tool(slot_index: int, item_id: StringName) -> void:
+	if slot_index < 0 or slot_index >= action_bar_slots.size():
+		push_error("Ungültiger Testplatz für Werkzeug '%s'." % item_id)
+		return
+	if not _item_database.has_item(item_id):
+		push_error("Testwerkzeug '%s' fehlt im Gegenstandskatalog." % item_id)
+		return
+	action_bar_slots[slot_index].set_stack(item_id, 1)

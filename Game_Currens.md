@@ -330,6 +330,9 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
 - Die anfängliche Interaktionsreichweite beträgt **32 Pixel**, entsprechend einem Feld des 32 × 32-Pixel-Rasters.
 - Das nächstgelegene erreichbare Interaktionsobjekt wird sichtbar hervorgehoben.
 - Werkzeugaktionen und allgemeine Interaktionen bleiben getrennte Eingabeaktionen, damit später Touch- und Controller-Bedienung ergänzt werden können.
+- Das Werkzeug im aktuell ausgewählten Aktionsleistenplatz ist das aktive Werkzeug. Ein leerer Platz oder ein normaler Gegenstand löst keine Werkzeugaktion aus.
+- Ein Wechsel des Aktionsleistenplatzes während des Aufladens bricht die laufende Aufladung ab.
+- Das Öffnen des Inventars verhindert Werkzeugaktionen.
 - Ist die **Hacke**, **Gießkanne** oder **Schaufel** ausgewählt, erscheint direkt vor dem Spieler eine sichtbare Zielmarkierung. Bei der Schaufel zeigt sie ein **32 × 32-Pixel-Rasterfeld**. Bei Hacke und Gießkanne zeigt sie abhängig von der Materialstufe alle Felder der jeweiligen Bearbeitungsfläche.
 - Alle drei Werkzeuge verwenden dasselbe allgemeine Zielfeldsystem. Die Markierung liegt unmittelbar am Feld des Spielers an und wechselt entsprechend seiner Blickrichtung nach oben, unten, links oder rechts.
 - Sie zeigt genau das Feld beziehungsweise bei Hacke und Gießkanne alle Felder an, die beim nächsten Einsatz bearbeitet werden:

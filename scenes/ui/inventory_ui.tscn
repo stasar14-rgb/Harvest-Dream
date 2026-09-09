@@ -5,7 +5,7 @@
 [sub_resource type="Theme" id="Theme_inventory"]
 default_font_size = 16
 
-[node name="InventoryUI" type="CanvasLayer"]
+[node name="InventoryUI" type="CanvasLayer" groups=["inventory_ui"]]
 layer = 20
 script = ExtResource("1_inventory_ui")
 

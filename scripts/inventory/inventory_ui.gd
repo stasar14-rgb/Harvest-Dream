@@ -43,14 +43,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		_set_inventory_open(not inventory_panel.visible)
 		get_viewport().set_input_as_handled()
 		return
-	if event.is_action_pressed(&"use_tool") and not inventory_panel.visible:
-		_inventory_system.request_selected_action_slot()
-		return
 	for slot_index in InventorySystem.ACTION_BAR_SLOTS:
 		if event.is_action_pressed(&"action_slot_%d" % (slot_index + 1)):
 			_inventory_system.select_action_slot(slot_index)
 			get_viewport().set_input_as_handled()
 			return
+
+func is_inventory_open() -> bool:
+	return inventory_panel.visible
 
 func _set_inventory_open(is_open: bool) -> void:
 	inventory_panel.visible = is_open

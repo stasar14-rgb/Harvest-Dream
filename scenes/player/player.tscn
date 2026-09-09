@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cb6llbx0vc7ss" path="res://scripts/player/player_movement.gd" id="1_movement"]
 [ext_resource type="Script" uid="uid://dqjnjs6obyyf5" path="res://scripts/interactions/player_interactor.gd" id="2_interactor"]
+[ext_resource type="Script" path="res://scripts/tools/tool_controller.gd" id="3_tool_controller"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
 size = Vector2(20, 12)
@@ -29,6 +30,10 @@ interaction_range = 48.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactor" unique_id=1735334077]
 shape = SubResource("CircleShape2D_interaction")
+
+[node name="ToolController" type="Node2D" parent="." groups=["tool_controller"]]
+show_behind_parent = true
+script = ExtResource("3_tool_controller")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=590677019]
 zoom = Vector2(2, 2)
