@@ -13,7 +13,9 @@ func setup(new_inventory_system: InventorySystem, new_item_database: ItemDatabas
 	item_database = new_item_database
 	container_id = new_container_id
 	slot_index = new_slot_index
-	custom_minimum_size = Vector2(52, 52)
+	custom_minimum_size = Vector2(64, 64)
+	clip_text = true
+	text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	focus_mode = Control.FOCUS_NONE
 	update_slot()
 
@@ -59,7 +61,9 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	if slot == null or slot.is_empty():
 		return null
 	var preview := Button.new()
-	preview.custom_minimum_size = Vector2(52, 52)
+	preview.custom_minimum_size = Vector2(64, 64)
+	preview.clip_text = true
+	preview.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	preview.text = text
 	preview.icon = icon
 	preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
