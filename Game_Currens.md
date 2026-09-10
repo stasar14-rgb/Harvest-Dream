@@ -372,6 +372,18 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
 - Kartoffelsaatgut wird aus der Aktionsleiste mit der linken Maustaste auf das markierte Feld direkt vor dem Spieler gesät.
 - Eine erntereife Pflanze auf dem Feld direkt vor dem Spieler wird mit **E** geerntet.
 
+### Ressourcenabbau
+
+- Bäume werden mit der Axt bearbeitet. Ein Testbaum benötigt mit der Kupferaxt **8 Schläge** und liefert **3 Holz**.
+- Steine und Erzvorkommen werden mit der Spitzhacke bearbeitet.
+- Ein Teststein benötigt mit der Kupferspitzhacke **6 Schläge** und liefert **2 Stein**.
+- Ein Test-Erzvorkommen benötigt mit der Kupferspitzhacke **7 Schläge** und liefert **1 Erz**.
+- Bronze benötigt jeweils einen Schlag weniger als Kupfer, Eisen zwei und Stahl drei Schläge weniger.
+- Die Energiekosten pro Schlag betragen weiterhin 5 für Kupfer, 4 für Bronze, 3 für Eisen und 2 für Stahl.
+- Abgebaute Bäume, Steine und Erzvorkommen erscheinen nach **3 vollständigen Spieltagen** erneut.
+- Bis ein allgemeines Bodenbeute-System existiert, wird der letzte Schlag bei vollem Inventar verhindert. Dadurch gehen weder die Ressource noch ihre Beute verloren.
+- Trefferstand und verbleibende Wiedererscheinungstage sind für spätere Spielstände vorbereitet.
+
 ## 10. Welt und Areale
 
 ### Areale im Grundspiel

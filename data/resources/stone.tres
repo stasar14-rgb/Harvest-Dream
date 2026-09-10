@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="HarvestableResourceData" format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/resource_data.gd" id="1_resource_data"]
+
+[resource]
+script = ExtResource("1_resource_data")
+resource_id = &"stone"
+display_name = "Stein"
+required_tool_type = 1
+copper_required_hits = 6
+drop_item_id = &"stone"
+drop_amount = 2
+respawn_days = 3
+placeholder_size = Vector2(28, 26)
+placeholder_color = Color(0.48, 0.48, 0.48, 1)

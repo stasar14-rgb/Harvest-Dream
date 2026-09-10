@@ -21,6 +21,7 @@ Allgemeine Stapelgrößen:
 
 [VORHANDEN] Holz
 [VORHANDEN] Erz
+[VORHANDEN] Stein
 
 
 2. SAMMELGEGENSTÄNDE
