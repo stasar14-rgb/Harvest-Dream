@@ -237,7 +237,7 @@ func _on_craft_max_pressed() -> void:
 		_forge_system.request_crafting(_selected_recipe_id, maximum)
 
 func _on_cancel_pressed() -> void:
-	_forge_system.cancel_current_batch()
+	_forge_system.cancel_all_batches()
 
 func _show_message(message: String) -> void:
 	message_label.text = message

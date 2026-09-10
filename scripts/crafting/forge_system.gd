@@ -142,30 +142,42 @@ func request_crafting(recipe_id: StringName, requested_amount: int) -> bool:
 		var required_amount := int(required_materials[item_id])
 		_reserved_amounts[item_id] = get_reserved_amount(item_id) + required_amount
 
-	_queue.append({
-		"recipe_id": recipe.recipe_id,
-		"total_amount": requested_amount,
-		"remaining_amount": requested_amount,
-	})
+	_append_or_merge_batch(recipe.recipe_id, requested_amount)
 	queue_changed.emit()
 	storage_changed.emit()
 	return true
 
-func cancel_current_batch() -> bool:
+func cancel_all_batches() -> bool:
 	if _queue.is_empty():
 		return false
-	var entry := _queue[0]
-	var recipe := get_recipe(StringName(entry.get("recipe_id", "")))
-	var remaining_amount := maxi(int(entry.get("remaining_amount", 0)), 0)
-	if recipe != null:
-		_release_recipe_reservations(recipe, remaining_amount)
-	_queue.pop_front()
+	for entry in _queue:
+		var recipe := get_recipe(StringName(entry.get("recipe_id", "")))
+		var remaining_amount := maxi(int(entry.get("remaining_amount", 0)), 0)
+		if recipe != null:
+			_release_recipe_reservations(recipe, remaining_amount)
+	_queue.clear()
+	_reserved_amounts.clear()
 	_progress_seconds = 0.0
 	_output_blocked = false
 	queue_changed.emit()
 	storage_changed.emit()
 	progress_changed.emit(get_progress_ratio())
 	return true
+
+func _append_or_merge_batch(recipe_id: StringName, requested_amount: int) -> void:
+	if not _queue.is_empty():
+		var last_index := _queue.size() - 1
+		var last_entry := _queue[last_index]
+		if StringName(last_entry.get("recipe_id", "")) == recipe_id:
+			last_entry["total_amount"] = int(last_entry.get("total_amount", 0)) + requested_amount
+			last_entry["remaining_amount"] = int(last_entry.get("remaining_amount", 0)) + requested_amount
+			_queue[last_index] = last_entry
+			return
+	_queue.append({
+		"recipe_id": recipe_id,
+		"total_amount": requested_amount,
+		"remaining_amount": requested_amount,
+	})
 
 func transfer_storage_slot_to_inventory(slot_index: int) -> bool:
 	if slot_index < 0 or slot_index >= storage_slots.size():
