@@ -1,15 +1,13 @@
-[gd_resource type="Resource" script_class="HarvestableResourceData" format=3]
+[gd_resource type="Resource" script_class="HarvestableResourceData" format=3 uid="uid://cchfob1jjsnjq"]
 
-[ext_resource type="Script" path="res://scripts/resources/resource_data.gd" id="1_resource_data"]
+[ext_resource type="Script" uid="uid://02tu21y6u7j5" path="res://scripts/resources/resource_data.gd" id="1_resource_data"]
 
 [resource]
 script = ExtResource("1_resource_data")
 resource_id = &"tree"
 display_name = "Baum"
-required_tool_type = 0
 copper_required_hits = 8
 drop_item_id = &"wood"
 drop_amount = 3
-respawn_days = 3
 placeholder_size = Vector2(64, 96)
-placeholder_color = Color(0.32, 0.55, 0.20, 1)
+placeholder_color = Color(0.32, 0.55, 0.2, 1)

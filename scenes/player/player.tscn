@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cb6llbx0vc7ss" path="res://scripts/player/player_movement.gd" id="1_movement"]
 [ext_resource type="Script" uid="uid://dqjnjs6obyyf5" path="res://scripts/interactions/player_interactor.gd" id="2_interactor"]
 [ext_resource type="Script" uid="uid://dp0o0hrk7ch2y" path="res://scripts/tools/tool_controller.gd" id="3_tool_controller"]
-[ext_resource type="Script" path="res://scripts/farming/farming_controller.gd" id="4_farming_controller"]
+[ext_resource type="Script" uid="uid://b505di7iu2ndc" path="res://scripts/farming/farming_controller.gd" id="4_farming_controller"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
 size = Vector2(32, 38)
@@ -35,9 +35,8 @@ shape = SubResource("CircleShape2D_interaction")
 [node name="ToolController" type="Node2D" parent="." unique_id=799473913 groups=["tool_controller"]]
 show_behind_parent = true
 script = ExtResource("3_tool_controller")
-player_grid_center_offset = Vector2(0, 25)
 
-[node name="FarmingController" type="Node2D" parent="."]
+[node name="FarmingController" type="Node2D" parent="." unique_id=386572929]
 show_behind_parent = true
 script = ExtResource("4_farming_controller")
 
