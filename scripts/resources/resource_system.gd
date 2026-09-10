@@ -10,32 +10,34 @@ signal resource_action_rejected(message: String)
 @export_range(1, 256, 1) var grid_size: int = 32
 ## Ursprung des Ressourcenrasters relativ zum Areal.
 @export var grid_origin: Vector2 = Vector2.ZERO
+## Pfad zum Bodenbeute-System desselben Areals.
+@export var ground_item_system_path: NodePath = ^"../GroundItemSystem"
 
 var _resources_by_cell: Dictionary = {}
 var _resources_by_id: Dictionary = {}
 var _tool_controller: ToolController
 var _player_energy: PlayerEnergy
-var _inventory_system: InventorySystem
 var _item_database: ItemDatabase
+var _ground_item_system: GroundItemSystem
 var _calendar: GameCalendar
 var _inventory_ui: InventoryUI
 
 func _ready() -> void:
 	_tool_controller = get_tree().get_first_node_in_group(&"tool_controller") as ToolController
 	_player_energy = get_tree().get_first_node_in_group(&"player_energy") as PlayerEnergy
-	_inventory_system = get_tree().get_first_node_in_group(&"inventory_system") as InventorySystem
 	_item_database = get_tree().get_first_node_in_group(&"item_database") as ItemDatabase
+	_ground_item_system = get_node_or_null(ground_item_system_path) as GroundItemSystem
 	_calendar = get_tree().get_first_node_in_group(&"game_calendar") as GameCalendar
 	_inventory_ui = get_tree().get_first_node_in_group(&"inventory_ui") as InventoryUI
 
 	if (
 		_tool_controller == null
 		or _player_energy == null
-		or _inventory_system == null
 		or _item_database == null
+		or _ground_item_system == null
 		or _calendar == null
 	):
-		push_error("ResourceSystem findet Werkzeug-, Energie-, Inventar- oder Kalendersystem nicht.")
+		push_error("ResourceSystem findet Werkzeug-, Energie-, Gegenstands-, Bodenbeute- oder Kalendersystem nicht.")
 		return
 
 	_index_resources()
@@ -115,12 +117,6 @@ func _on_tool_use_requested(
 		_reject_action("Nicht genug Energie für diesen Schlag.")
 		return
 
-	if resource.will_deplete_with(tool):
-		var data := resource.resource_data
-		if not _inventory_system.can_add_item(data.drop_item_id, data.drop_amount):
-			_reject_action("Inventar voll – die Ressource wurde nicht abgebaut.")
-			return
-
 	_player_energy.consume_energy(base_energy_cost)
 	resource.apply_hit(tool)
 	resource_hit.emit(
@@ -131,7 +127,8 @@ func _on_tool_use_requested(
 	)
 
 	if resource.is_depleted:
-		_inventory_system.try_add_item(
+		_ground_item_system.spawn_item(
+			resource.global_position,
 			resource.resource_data.drop_item_id,
 			resource.resource_data.drop_amount
 		)

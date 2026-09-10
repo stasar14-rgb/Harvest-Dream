@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3]
+[gd_scene load_steps=18 format=3]
 
 [ext_resource type="Script" path="res://scripts/areas/game_area.gd" id="1_area"]
 [ext_resource type="PackedScene" path="res://scenes/areas/spawn_point.tscn" id="2_spawn_point"]
@@ -14,6 +14,7 @@
 [ext_resource type="Resource" path="res://data/resources/tree.tres" id="13_tree"]
 [ext_resource type="Resource" path="res://data/resources/stone.tres" id="14_stone"]
 [ext_resource type="Resource" path="res://data/resources/ore.tres" id="15_ore"]
+[ext_resource type="Script" path="res://scripts/items/ground_item_system.gd" id="16_ground_items"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_horizontal"]
 size = Vector2(1280, 16)
@@ -81,6 +82,10 @@ tillable_area = Rect2i(2, 2, 36, 18)
 z_index = 2
 script = ExtResource("7_plant_system")
 available_plants = Array[ExtResource("8_plant_data")]([ExtResource("9_potato_plant")])
+
+[node name="GroundItemSystem" type="Node2D" parent="." groups=["ground_item_system"]]
+z_index = 4
+script = ExtResource("16_ground_items")
 
 [node name="ResourceSystem" type="Node2D" parent="." groups=["resource_system"]]
 z_index = 3

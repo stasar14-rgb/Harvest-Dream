@@ -381,8 +381,18 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
 - Bronze benötigt jeweils einen Schlag weniger als Kupfer, Eisen zwei und Stahl drei Schläge weniger.
 - Die Energiekosten pro Schlag betragen weiterhin 5 für Kupfer, 4 für Bronze, 3 für Eisen und 2 für Stahl.
 - Abgebaute Bäume, Steine und Erzvorkommen erscheinen nach **3 vollständigen Spieltagen** erneut.
-- Bis ein allgemeines Bodenbeute-System existiert, wird der letzte Schlag bei vollem Inventar verhindert. Dadurch gehen weder die Ressource noch ihre Beute verloren.
+- Beim vollständigen Abbau wird die erhaltene Ressource als Bodenbeute an der Position des Vorkommens abgelegt.
 - Trefferstand und verbleibende Wiedererscheinungstage sind für spätere Spielstände vorbereitet.
+
+### Bodenbeute
+
+- Bodenbeute wird automatisch aufgenommen, sobald sich der Spieler auf **48 Pixel** nähert. Diese anfängliche Entfernung bleibt im Inspector anpassbar.
+- Reicht der freie Inventarplatz nur für einen Teil des Stapels, wird nur diese Menge aufgenommen. Der Rest bleibt unverändert auf dem Boden.
+- Ist das Inventar vollständig gefüllt, bleibt die gesamte Beute auf dem Boden liegen.
+- Gleiche Gegenstände innerhalb von **32 Pixeln** verbinden sich automatisch bis zur jeweiligen maximalen Stapelgröße.
+- Mengen oberhalb der maximalen Stapelgröße bilden einen weiteren Bodenstapel.
+- Nicht aufgenommene Bodenbeute verschwindet beim nächsten Tagesbeginn.
+- Bodenbeute besitzt eigene Daten für spätere Spielstände, damit sie beim Speichern während desselben Tages erhalten werden kann.
 
 ## 10. Welt und Areale
 
