@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_item")
 item_id = &"ore"
-display_name = "Erz"
-description = "Rohes Erz, das später verarbeitet werden kann."
+display_name = "Kupfererz"
+description = "Kupfererz zum Schmelzen von Kupfer- und Bronzebarren."
 category = 0

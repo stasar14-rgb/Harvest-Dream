@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" format=3]
+
+[ext_resource type="Script" path="res://scripts/crafting/crafting_recipe.gd" id="1_recipe"]
+
+[resource]
+script = ExtResource("1_recipe")
+recipe_id = &"steel_bar"
+display_name = "Stahlbarren"
+output_item_id = &"steel_bar"
+ingredient_item_ids = Array[StringName]([&"iron_ore", &"coal"])
+ingredient_amounts = Array[int]([3, 2])
+crafting_seconds = 60.0

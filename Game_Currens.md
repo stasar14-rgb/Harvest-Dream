@@ -330,7 +330,17 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
 - Silberbarren: **3 Silbererz = 1 Silberbarren**
 - Goldbarren: **3 Golderz = 1 Goldbarren**
 - Silber- und Goldbarren sind für Schmuck und weitere spätere Gegenstände vorgesehen, nicht als anfängliche Werkzeugstufen.
-- Diese Mengen sind die festgelegten Grundrezepte. Das eigentliche Schmelz- und Herstellungssystem wird in einem späteren Schritt gebaut.
+- Jeder Barren benötigt zunächst **60 Sekunden reale Spielzeit**. Die Dauer bleibt pro Rezept anpassbar.
+- Eine beliebige herstellbare Menge kann gemeinsam in Auftrag gegeben werden. Die Schmiede stellt trotzdem immer nur einen Barren nach dem anderen her.
+- Alle Rohstoffe des Auftrags werden sofort reserviert. Fehlende Mengen werden aus dem Spielerinventar in das Schmiedelager übertragen; vorhandene freie Materialien im Schmiedelager werden zuerst verwendet.
+- Die Schmiede verarbeitet ihre Warteschlange weiter, während der Spieler das Menü geschlossen hat oder sich in einem anderen Areal befindet. Eine Offline-Produktion bei beendetem Spiel ist noch nicht festgelegt.
+- Das gemeinsame Schmiedelager besitzt **20 Plätze als 5 × 4 Raster** und enthält Rohstoffe sowie fertige Gegenstände.
+- Das Schmiedelager ist ausschließlich ein Zwischenlager für die Herstellung und kann nicht manuell aus dem Spielerinventar befüllt werden.
+- Verfügbare Stapel werden mit **Umschalt + linker Maustaste** aus dem Schmiedelager ins Spielerinventar verschoben. Für laufende Aufträge reservierte Mengen können nicht entnommen werden.
+- Beim Abbruch bleiben alle noch nicht verbrauchten Materialien im Schmiedelager und können direkt für weitere Aufträge verwendet werden.
+- Das Schmiedemenü zeigt links die Rezeptliste mit Icon, Namen und farbigem Materialstatus. Rechts stehen Rezeptdetails, benötigte und vorhandene Mengen sowie die Schaltflächen 1×, 10× und Max. Unten werden laufender Auftrag, Fortschritt, Abbruch und das gemeinsame Lager angezeigt.
+- Das Schmiedemenü kann mit **Escape** oder über einen sichtbaren Schließen-Button geschlossen werden.
+- Die Schmiede muss später zuerst auf dem Hof gebaut werden. Bis das Gebäude-Bausystem existiert, steht auf der Testfläche eine ausdrücklich freigeschaltete Test-Schmiede bereit.
 
 ### Bedienung und allgemeine Interaktion
 
@@ -484,6 +494,7 @@ Das Projekt muss so aufgebaut werden, dass spätere Änderungen keine unnötigen
 - Zentrale Systeme kommunizieren über klar definierte Schnittstellen oder Signale und greifen nicht unnötig direkt ineinander.
 - Systeme für spätere Inhalte dürfen vorbereitet, aber nicht vorzeitig vollständig gebaut werden.
 - Jede im Godot-Inspektor sichtbare Einstellung erhält einen kurzen deutschen Hilfetext, der Zweck und Auswirkung verständlich erklärt.
+- Aufbau und Aussehen jedes Spielmenüs werden vom Nutzer vorgegeben. Neue Menüs dürfen erst nach einer bestätigten Layoutvorgabe gestaltet werden.
 
 ### Vorgesehene getrennte Datenbereiche
 

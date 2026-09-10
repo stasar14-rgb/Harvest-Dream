@@ -1,0 +1,244 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/crafting/forge_ui.gd" id="1_ui"]
+
+[sub_resource type="Theme" id="Theme_forge"]
+default_font_size = 16
+
+[node name="ForgeUI" type="CanvasLayer" groups=["forge_ui"]]
+layer = 30
+script = ExtResource("1_ui")
+
+[node name="Root" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_forge")
+
+[node name="DimBackground" type="ColorRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.03, 0.03, 0.72)
+mouse_filter = 0
+
+[node name="MainPanel" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -590.0
+offset_top = -325.0
+offset_right = 590.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="Root/MainPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="MainVBox" type="VBoxContainer" parent="Root/MainPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="HBoxContainer" parent="Root/MainPanel/Margin/MainVBox"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Root/MainPanel/Margin/MainVBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "Schmiede"
+
+[node name="CloseButton" type="Button" parent="Root/MainPanel/Margin/MainVBox/Header"]
+layout_mode = 2
+custom_minimum_size = Vector2(52, 40)
+text = "X"
+
+[node name="Content" type="HBoxContainer" parent="Root/MainPanel/Margin/MainVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="LeftColumn" type="VBoxContainer" parent="Root/MainPanel/Margin/MainVBox/Content"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="RecipePanel" type="PanelContainer" parent="Root/MainPanel/Margin/MainVBox/Content/LeftColumn"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RecipeMargin" type="MarginContainer" parent="Root/MainPanel/Margin/MainVBox/Content/LeftColumn/RecipePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="RecipeVBox" type="VBoxContainer" parent="Root/MainPanel/Margin/MainVBox/Content/LeftColumn/RecipePanel/RecipeMargin"]
+layout_mode = 2
+
+[node name="RecipeTitle" type="Label" parent="Root/MainPanel/Margin/MainVBox/Content/LeftColumn/RecipePanel/RecipeMargin/RecipeVBox"]
+layout_mode = 2
+text = "Herstellbare Gegenstände"
+
+[node name="RecipeScroll" type="ScrollContainer" parent="Root/MainPanel/Margin/MainVBox/Content/LeftColumn/RecipePanel/RecipeMargin/RecipeVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="RecipeList" type="VBoxContainer" parent="Root/MainPanel/Margin/MainVBox/Content/LeftColumn/RecipePanel/RecipeMargin/RecipeVBox/RecipeScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CurrentPanel" type="PanelContainer" parent="Root/MainPanel/Margin/MainVBox/Content/LeftColumn"]
+custom_minimum_size = Vector2(0, 155)
+layout_mode = 2
+
+[node name="CurrentMargin" type="MarginContainer" parent="Root/MainPanel/Margin/MainVBox/Content/LeftColumn/CurrentPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 10
+
+[node name="CurrentVBox" type="VBoxContainer" parent="Root/MainPanel/Margin/MainVBox/Content/LeftColumn/CurrentPanel/CurrentMargin"]
+layout_mode = 2
+
+[node name="CurrentTitle" type="Label" parent="Root/MainPanel/Margin/MainVBox/Content/LeftColumn/CurrentPanel/CurrentMargin/CurrentVBox"]
+layout_mode = 2
+text = "Wird hergestellt"
+horizontal_alignment = 1
+
+[node name="CurrentName" type="Label" parent="Root/MainPanel/Margin/MainVBox/Content/LeftColumn/CurrentPanel/CurrentMargin/CurrentVBox"]
+layout_mode = 2
+text = "Kein Auftrag"
+
+[node name="ProgressRow" type="HBoxContainer" parent="Root/MainPanel/Margin/MainVBox/Content/LeftColumn/CurrentPanel/CurrentMargin/CurrentVBox"]
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Root/MainPanel/Margin/MainVBox/Content/LeftColumn/CurrentPanel/CurrentMargin/CurrentVBox/ProgressRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+show_percentage = false
+
+[node name="ProgressCount" type="Label" parent="Root/MainPanel/Margin/MainVBox/Content/LeftColumn/CurrentPanel/CurrentMargin/CurrentVBox/ProgressRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(70, 0)
+text = "0/0"
+horizontal_alignment = 1
+
+[node name="CancelButton" type="Button" parent="Root/MainPanel/Margin/MainVBox/Content/LeftColumn/CurrentPanel/CurrentMargin/CurrentVBox"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Abbruch"
+
+[node name="RightColumn" type="VBoxContainer" parent="Root/MainPanel/Margin/MainVBox/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="DetailPanel" type="PanelContainer" parent="Root/MainPanel/Margin/MainVBox/Content/RightColumn"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="DetailMargin" type="MarginContainer" parent="Root/MainPanel/Margin/MainVBox/Content/RightColumn/DetailPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="DetailVBox" type="VBoxContainer" parent="Root/MainPanel/Margin/MainVBox/Content/RightColumn/DetailPanel/DetailMargin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TopRow" type="HBoxContainer" parent="Root/MainPanel/Margin/MainVBox/Content/RightColumn/DetailPanel/DetailMargin/DetailVBox"]
+layout_mode = 2
+
+[node name="DetailIcon" type="TextureRect" parent="Root/MainPanel/Margin/MainVBox/Content/RightColumn/DetailPanel/DetailMargin/DetailVBox/TopRow"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DetailName" type="Label" parent="Root/MainPanel/Margin/MainVBox/Content/RightColumn/DetailPanel/DetailMargin/DetailVBox/TopRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Name"
+
+[node name="IngredientList" type="VBoxContainer" parent="Root/MainPanel/Margin/MainVBox/Content/RightColumn/DetailPanel/DetailMargin/DetailVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="QuantityButtons" type="HBoxContainer" parent="Root/MainPanel/Margin/MainVBox/Content/RightColumn/DetailPanel/DetailMargin/DetailVBox"]
+layout_mode = 2
+alignment = 2
+
+[node name="CraftOne" type="Button" parent="Root/MainPanel/Margin/MainVBox/Content/RightColumn/DetailPanel/DetailMargin/DetailVBox/QuantityButtons"]
+custom_minimum_size = Vector2(90, 52)
+layout_mode = 2
+text = "1x"
+
+[node name="CraftTen" type="Button" parent="Root/MainPanel/Margin/MainVBox/Content/RightColumn/DetailPanel/DetailMargin/DetailVBox/QuantityButtons"]
+custom_minimum_size = Vector2(90, 52)
+layout_mode = 2
+text = "10x"
+
+[node name="CraftMax" type="Button" parent="Root/MainPanel/Margin/MainVBox/Content/RightColumn/DetailPanel/DetailMargin/DetailVBox/QuantityButtons"]
+custom_minimum_size = Vector2(110, 52)
+layout_mode = 2
+text = "Max"
+
+[node name="StoragePanel" type="PanelContainer" parent="Root/MainPanel/Margin/MainVBox/Content/RightColumn"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StorageMargin" type="MarginContainer" parent="Root/MainPanel/Margin/MainVBox/Content/RightColumn/StoragePanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 10
+
+[node name="StorageVBox" type="VBoxContainer" parent="Root/MainPanel/Margin/MainVBox/Content/RightColumn/StoragePanel/StorageMargin"]
+layout_mode = 2
+
+[node name="StorageTitle" type="Label" parent="Root/MainPanel/Margin/MainVBox/Content/RightColumn/StoragePanel/StorageMargin/StorageVBox"]
+layout_mode = 2
+text = "Schmiedelager – Umschalt + Linksklick: ins Inventar"
+horizontal_alignment = 1
+
+[node name="StorageGrid" type="GridContainer" parent="Root/MainPanel/Margin/MainVBox/Content/RightColumn/StoragePanel/StorageMargin/StorageVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 5
+
+[node name="MessageLabel" type="Label" parent="Root"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.82, 0.2, 1)
+text = "Meldung"
+horizontal_alignment = 1
