@@ -5,6 +5,29 @@
 [ext_resource type="Script" uid="uid://dp0o0hrk7ch2y" path="res://scripts/tools/tool_controller.gd" id="3_tool_controller"]
 [ext_resource type="Script" uid="uid://b505di7iu2ndc" path="res://scripts/farming/farming_controller.gd" id="4_farming_controller"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ffykg"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"walking_east",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"walking_north",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"walking_south",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"walking_west",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
 size = Vector2(32, 38)
 
@@ -15,9 +38,11 @@ radius = 32.0
 motion_mode = 1
 script = ExtResource("1_movement")
 
-[node name="PlaceholderVisual" type="Polygon2D" parent="." unique_id=783362432]
-color = Color(0.2, 0.65, 0.3, 1)
-polygon = PackedVector2Array(-16, -24, 16, -24, 16, 24, -16, 24)
+[node name="PlaceholderVisual" type="AnimatedSprite2D" parent="." unique_id=1151022113]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ffykg")
+animation = &"walking_west"
+speed_scale = 0.25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=351920606]
 position = Vector2(0, 5)
