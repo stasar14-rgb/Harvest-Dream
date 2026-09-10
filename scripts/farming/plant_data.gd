@@ -11,8 +11,10 @@ extends Resource
 @export var harvest_item_id: StringName = &""
 ## Anzahl bewässerter Wachstumstage bis zur Erntereife.
 @export_range(1, 9999, 1) var growth_days: int = 1
-## Anzahl der Gegenstände, die eine erfolgreiche Ernte liefert.
-@export_range(1, 999, 1) var harvest_amount: int = 1
+## Kleinste Anzahl an Gegenständen, die eine erfolgreiche Ernte liefern kann.
+@export_range(1, 999, 1) var minimum_harvest_amount: int = 1
+## Größte Anzahl an Gegenständen, die eine erfolgreiche Ernte liefern kann.
+@export_range(1, 999, 1) var maximum_harvest_amount: int = 1
 ## Erlaubte Jahreszeiten als Kalenderwerte: 0 Frühling, 1 Sommer, 2 Herbst und 3 Winter. Eine leere Liste erlaubt jede Jahreszeit.
 @export var allowed_seasons: Array[int] = []
 ## Später austauschbare Bilder der Wachstumsstufen. Ohne Bilder verwendet das Testsystem Platzhalter.
@@ -22,6 +24,9 @@ extends Resource
 
 func is_available_in_season(season: int) -> bool:
 	return allowed_seasons.is_empty() or allowed_seasons.has(season)
+
+func roll_harvest_amount() -> int:
+	return randi_range(minimum_harvest_amount, maximum_harvest_amount)
 
 func get_growth_stage(grown_days: int) -> int:
 	if growth_stage_textures.is_empty():
@@ -40,8 +45,11 @@ func is_valid_definition() -> bool:
 	if seed_item_id == &"" or harvest_item_id == &"":
 		push_error("Pflanze '%s' benötigt Saatgut- und Erntegegenstands-IDs." % plant_id)
 		return false
-	if growth_days < 1 or harvest_amount < 1:
+	if growth_days < 1 or minimum_harvest_amount < 1:
 		push_error("Pflanze '%s' besitzt ungültige Wachstums- oder Erntewerte." % plant_id)
+		return false
+	if maximum_harvest_amount < minimum_harvest_amount:
+		push_error("Pflanze '%s' besitzt eine kleinere maximale als minimale Erntemenge." % plant_id)
 		return false
 	for season in allowed_seasons:
 		if season < GameCalendar.Month.SPRING or season > GameCalendar.Month.WINTER:

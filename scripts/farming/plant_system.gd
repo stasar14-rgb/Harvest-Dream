@@ -48,8 +48,18 @@ func _ready() -> void:
 func has_plant(cell: Vector2i) -> bool:
 	return _plants.has(cell)
 
+func get_soil_system() -> SoilSystem:
+	return _soil_system
+
 func get_plant_state(cell: Vector2i) -> PlantState:
 	return _plants.get(cell) as PlantState
+
+func get_plant_for_seed(seed_item_id: StringName) -> PlantData:
+	for plant in _plants_by_id.values():
+		var definition := plant as PlantData
+		if definition != null and definition.seed_item_id == seed_item_id:
+			return definition
+	return null
 
 func can_sow(cell: Vector2i, plant: PlantData) -> bool:
 	if plant == null or not plant.is_valid_definition():
@@ -60,16 +70,26 @@ func can_sow(cell: Vector2i, plant: PlantData) -> bool:
 		return false
 	return _inventory_system.get_item_amount(plant.seed_item_id) > 0
 
-func try_sow(cell: Vector2i, plant: PlantData) -> bool:
+func try_sow(cell: Vector2i, plant: PlantData, source_action_slot: int = -1) -> bool:
 	if not can_sow(cell, plant):
 		plant_action_rejected.emit("Dieses Saatgut kann auf dem ausgewählten Feld nicht ausgesät werden.")
 		return false
-	if not _inventory_system.remove_item(plant.seed_item_id, 1):
+	var seed_was_consumed := false
+	if source_action_slot >= 0:
+		seed_was_consumed = _inventory_system.consume_action_slot_item(
+			source_action_slot,
+			plant.seed_item_id,
+			1
+		)
+	else:
+		seed_was_consumed = _inventory_system.remove_item(plant.seed_item_id, 1)
+	if not seed_was_consumed:
 		plant_action_rejected.emit("Das benötigte Saatgut konnte nicht verbraucht werden.")
 		return false
 
 	var state := PlantState.new()
 	state.plant_data = plant
+	state.harvest_amount = plant.roll_harvest_amount()
 	_plants[cell] = state
 	_soil_system.set_cell_has_plant(cell, true)
 	plant_sown.emit(cell, plant)
@@ -83,15 +103,16 @@ func try_harvest(cell: Vector2i) -> bool:
 		return false
 
 	var plant := state.plant_data
-	if not _inventory_system.can_add_item(plant.harvest_item_id, plant.harvest_amount):
+	var harvest_amount := state.harvest_amount
+	if not _inventory_system.can_add_item(plant.harvest_item_id, harvest_amount):
 		plant_action_rejected.emit("Inventar voll – die Pflanze wurde nicht geerntet.")
 		return false
-	if not _inventory_system.try_add_item(plant.harvest_item_id, plant.harvest_amount):
+	if not _inventory_system.try_add_item(plant.harvest_item_id, harvest_amount):
 		plant_action_rejected.emit("Die Ernte konnte nicht ins Inventar gelegt werden.")
 		return false
 
 	_remove_plant(cell)
-	plant_harvested.emit(cell, plant, plant.harvest_amount)
+	plant_harvested.emit(cell, plant, harvest_amount)
 	return true
 
 func remove_plant(cell: Vector2i) -> bool:

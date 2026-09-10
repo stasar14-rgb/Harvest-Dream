@@ -29,6 +29,12 @@ Allgemeine Stapelgrößen:
 [VORHANDEN] Beeren
 
 
+2A. SAATGUT
+-------------
+
+[VORHANDEN] Kartoffelsaatgut
+
+
 3. WERKZEUGE
 ------------
 
@@ -42,7 +48,7 @@ Allgemeine Stapelgrößen:
 ------------------------------
 
 Frühling:
-[GEPLANT] Kartoffel
+[VORHANDEN] Kartoffel
 [GEPLANT] Karotte
 [GEPLANT] Radieschen
 [GEPLANT] Erdbeere

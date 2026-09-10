@@ -16,6 +16,9 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	_refresh_focused_interactable()
 
+func has_focused_interactable() -> bool:
+	return _focused_interactable != null
+
 func _unhandled_input(event: InputEvent) -> void:
 	if not event.is_action_pressed(&"interact"):
 		return

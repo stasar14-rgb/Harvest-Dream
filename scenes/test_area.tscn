@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=12 format=3]
 
 [ext_resource type="Script" path="res://scripts/areas/game_area.gd" id="1_area"]
 [ext_resource type="PackedScene" path="res://scenes/areas/spawn_point.tscn" id="2_spawn_point"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" path="res://scenes/interactions/interactable.tscn" id="5_interactable"]
 [ext_resource type="Script" path="res://scripts/farming/soil_system.gd" id="6_soil_system"]
 [ext_resource type="Script" path="res://scripts/farming/plant_system.gd" id="7_plant_system"]
+[ext_resource type="Script" path="res://scripts/farming/plant_data.gd" id="8_plant_data"]
+[ext_resource type="Resource" path="res://data/plants/potato.tres" id="9_potato_plant"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_horizontal"]
 size = Vector2(1280, 16)
@@ -73,6 +75,7 @@ tillable_area = Rect2i(2, 2, 36, 18)
 [node name="PlantSystem" type="Node2D" parent="." groups=["plant_system"]]
 z_index = 2
 script = ExtResource("7_plant_system")
+available_plants = Array[ExtResource("8_plant_data")]([ExtResource("9_potato_plant")])
 
 [node name="LeftTransitionVisual" type="Polygon2D" parent="."]
 color = Color(0.15, 0.65, 1, 0.35)

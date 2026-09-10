@@ -367,6 +367,10 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
 - Nach der Ernte bleibt das Feld als Ackerboden bestehen. Es muss nicht erneut mit der Hacke bearbeitet werden.
 - Ob der bestehende Ackerboden nach der Ernte trocken oder bewässert ist, bleibt unverändert.
 - Konkrete Pflanzenarten, Wachstumszeiten, Erntemengen, Jahreszeiten und Grafiken werden später als austauschbare Pflanzendaten eingetragen.
+- Die erste Testpflanze ist die **Kartoffel**. Sie wächst im Frühling und benötigt **vier bewässerte Wachstumstage**.
+- Eine erntereife Kartoffelpflanze liefert bei der Ernte zufällig **eine bis drei Kartoffeln**.
+- Kartoffelsaatgut wird aus der Aktionsleiste mit der linken Maustaste auf das markierte Feld direkt vor dem Spieler gesät.
+- Eine erntereife Pflanze auf dem Feld direkt vor dem Spieler wird mit **E** geerntet.
 
 ## 10. Welt und Areale
 
