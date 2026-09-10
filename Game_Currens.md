@@ -52,13 +52,15 @@ Aktuell gibt es noch keine festgelegte vollständige Handlung. Die technischen S
 ### Berufe im Grundspiel
 
 - Bergbau
-- Schmieden
+- Schmied
 - Landwirtschaft
-- Holzfällen
+- Holzfäller
+- Kochen
+- Handwerk für den Bau von Hofobjekten wie Straßen und Fackeln
+- Kampf
 
 ### Später geplante Berufe und Tätigkeiten
 
-- Kämpfen
 - Fischen
 - Verzauberung
 - weitere Berufe nach Bedarf
@@ -148,16 +150,22 @@ Ein Kampfsystem wird später ergänzt. Die übrigen Systeme dürfen deshalb nich
 
 Berufe erhalten durch ihre aktive Benutzung Erfahrungspunkte.
 
+Erfahrung wird ausschließlich für vollständig abgeschlossene Tätigkeiten vergeben. Einzelne Schläge oder begonnene, aber nicht fertiggestellte Aktionen geben keine Erfahrung.
+
 Beispiele:
 
-- Bergbau erhält Erfahrung durch das Abbauen geeigneter Vorkommen.
-- Holzfällen erhält Erfahrung durch das Fällen oder Bearbeiten von Holzquellen.
-- Landwirtschaft erhält Erfahrung durch landwirtschaftliche Tätigkeiten.
-- Schmieden erhält Erfahrung durch das Herstellen oder Bearbeiten geeigneter Gegenstände.
+- Bergbau erhält Erfahrung, wenn ein Stein oder Erzvorkommen vollständig abgebaut wurde.
+- Holzfäller erhält Erfahrung, wenn ein Baum vollständig gefällt wurde.
+- Landwirtschaft erhält Erfahrung, wenn eine erntereife Pflanze erfolgreich geerntet wurde.
+- Schmied, Kochen, Handwerk und Kampf erhalten später Erfahrung beim Abschluss ihrer jeweiligen Tätigkeit.
+
+Für die ersten Tests geben das Fällen eines Baums, der vollständige Abbau eines Steins oder Erzvorkommens und die erfolgreiche Kartoffelernte jeweils **10 Erfahrungspunkte**. Auch die vorbereiteten Werte der übrigen Berufe beginnen bei 10. Jeder Tätigkeitswert bleibt einzeln im Inspector anpassbar.
 
 ### Geplanter Levelbereich
 
 Berufe sollen zunächst von **Level 1 bis Level 50** aufsteigen können.
+
+Die vorläufige Testschwelle beträgt **100 Erfahrungspunkte pro Level**. Basiswert und zusätzliche Erfahrung pro Level sind im Inspector getrennt einstellbar; die endgültige Erfahrungskurve wird erst nach Spieltests festgelegt.
 
 ### Beispiel: Bergbau
 

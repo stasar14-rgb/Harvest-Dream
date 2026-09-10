@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cwxpx85134bk4"]
+[gd_scene load_steps=12 format=3 uid="uid://cwxpx85134bk4"]
 
 [ext_resource type="Script" uid="uid://bk76l7jsle18f" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="PackedScene" path="res://scenes/test_area.tscn" id="2_test_area"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://cubb8ir27s6b4" path="res://data/items/item_catalog.tres" id="8_item_catalog"]
 [ext_resource type="Script" uid="uid://ccogf05m04ftx" path="res://scripts/inventory/inventory_system.gd" id="9_inventory"]
 [ext_resource type="PackedScene" path="res://scenes/ui/inventory_ui.tscn" id="10_inventory_ui"]
+[ext_resource type="Script" path="res://scripts/professions/profession_system.gd" id="11_professions"]
 
 [node name="Main" type="Node" unique_id=1967308786]
 script = ExtResource("1_main")
@@ -29,6 +30,9 @@ catalog = ExtResource("8_item_catalog")
 
 [node name="InventorySystem" type="Node" parent="." unique_id=722159417 groups=["inventory_system"]]
 script = ExtResource("9_inventory")
+
+[node name="ProfessionSystem" type="Node" parent="." groups=["profession_system"]]
+script = ExtResource("11_professions")
 
 [node name="AreaContainer" type="Node2D" parent="." unique_id=328604731]
 

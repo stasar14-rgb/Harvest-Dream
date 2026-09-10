@@ -11,6 +11,7 @@ signal area_changed(
 @export var start_spawn_id: StringName = &"default"
 
 @onready var game_calendar: GameCalendar = $GameCalendar
+@onready var profession_system: ProfessionSystem = $ProfessionSystem
 @onready var area_container: Node2D = $AreaContainer
 @onready var player: CharacterBody2D = $Player
 @onready var player_camera: Camera2D = $Player/Camera2D
@@ -125,6 +126,7 @@ func _update_current_location(spawn_id: StringName, area_path: String = "") -> v
 func _configure_area(area: GameArea) -> void:
 	_apply_camera_bounds(area.get_camera_bounds())
 	_apply_area_time_rule(area)
+	profession_system.connect_area(area)
 
 	if not area.area_change_requested.is_connected(_on_area_change_requested):
 		area.area_change_requested.connect(_on_area_change_requested)
