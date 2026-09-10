@@ -46,14 +46,12 @@ func _ready() -> void:
 		try_add_item(&"berries", 10)
 
 	if add_debug_starting_tools:
-		_set_debug_action_tool(0, &"hoe_copper")
-		_set_debug_action_tool(1, &"hoe_bronze")
-		_set_debug_action_tool(2, &"watering_can_iron")
-		_set_debug_action_tool(3, &"watering_can_steel")
+		_set_debug_action_tool(0, &"axe_copper")
+		_set_debug_action_tool(1, &"pickaxe_copper")
+		_set_debug_action_tool(2, &"hoe_copper")
+		_set_debug_action_tool(3, &"watering_can_copper")
 		_set_debug_action_tool(4, &"shovel")
 		_set_debug_action_item(5, &"potato_seed")
-		_set_debug_action_tool(6, &"axe_copper")
-		_set_debug_action_tool(7, &"pickaxe_copper")
 
 func get_inventory_capacity() -> int:
 	return STARTING_INVENTORY_SLOTS + purchased_bag_upgrades * SLOTS_PER_UPGRADE
