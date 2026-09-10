@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cwxpx85134bk4"]
+[gd_scene format=3 uid="uid://cwxpx85134bk4"]
 
 [ext_resource type="Script" uid="uid://bk76l7jsle18f" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="PackedScene" path="res://scenes/test_area.tscn" id="2_test_area"]
@@ -9,10 +9,11 @@
 [ext_resource type="Script" uid="uid://do31akhcte8x7" path="res://scripts/items/item_database.gd" id="7_item_database"]
 [ext_resource type="Resource" uid="uid://cubb8ir27s6b4" path="res://data/items/item_catalog.tres" id="8_item_catalog"]
 [ext_resource type="Script" uid="uid://ccogf05m04ftx" path="res://scripts/inventory/inventory_system.gd" id="9_inventory"]
+[ext_resource type="Script" uid="uid://c7evej2v07x1a" path="res://scripts/crafting/crafting_recipe.gd" id="10_gqmmt"]
 [ext_resource type="PackedScene" path="res://scenes/ui/inventory_ui.tscn" id="10_inventory_ui"]
 [ext_resource type="Script" uid="uid://e1qqkrlj6ued" path="res://scripts/professions/profession_system.gd" id="11_professions"]
-[ext_resource type="Script" path="res://scripts/crafting/forge_system.gd" id="12_forge_system"]
-[ext_resource type="PackedScene" path="res://scenes/ui/forge_ui.tscn" id="13_forge_ui"]
+[ext_resource type="Script" uid="uid://cqehv0erqt3t6" path="res://scripts/crafting/forge_system.gd" id="12_forge_system"]
+[ext_resource type="PackedScene" uid="uid://dt8frfw3sttud" path="res://scenes/ui/forge_ui.tscn" id="13_forge_ui"]
 [ext_resource type="Resource" path="res://data/recipes/copper_bar.tres" id="14_copper_recipe"]
 [ext_resource type="Resource" path="res://data/recipes/bronze_bar.tres" id="15_bronze_recipe"]
 [ext_resource type="Resource" path="res://data/recipes/iron_bar.tres" id="16_iron_recipe"]
@@ -42,9 +43,9 @@ script = ExtResource("9_inventory")
 [node name="ProfessionSystem" type="Node" parent="." unique_id=1436480216 groups=["profession_system"]]
 script = ExtResource("11_professions")
 
-[node name="ForgeSystem" type="Node" parent="." groups=["forge_system"]]
+[node name="ForgeSystem" type="Node" parent="." unique_id=519623173 groups=["forge_system"]]
 script = ExtResource("12_forge_system")
-available_recipes = Array[ExtResource("14_copper_recipe")]([ExtResource("14_copper_recipe"), ExtResource("15_bronze_recipe"), ExtResource("16_iron_recipe"), ExtResource("17_steel_recipe"), ExtResource("18_silver_recipe"), ExtResource("19_gold_recipe")])
+available_recipes = Array[ExtResource("10_gqmmt")]([ExtResource("14_copper_recipe"), ExtResource("15_bronze_recipe"), ExtResource("16_iron_recipe"), ExtResource("17_steel_recipe"), ExtResource("18_silver_recipe"), ExtResource("19_gold_recipe")])
 
 [node name="AreaContainer" type="Node2D" parent="." unique_id=328604731]
 
@@ -55,4 +56,4 @@ move_speed = 200.0
 
 [node name="InventoryUI" parent="." unique_id=761676356 instance=ExtResource("10_inventory_ui")]
 
-[node name="ForgeUI" parent="." instance=ExtResource("13_forge_ui")]
+[node name="ForgeUI" parent="." unique_id=1341317801 instance=ExtResource("13_forge_ui")]
