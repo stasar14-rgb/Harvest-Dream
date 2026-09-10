@@ -52,13 +52,15 @@ Aktuell gibt es noch keine festgelegte vollständige Handlung. Die technischen S
 ### Berufe im Grundspiel
 
 - Bergbau
-- Schmieden
+- Schmied
 - Landwirtschaft
-- Holzfällen
+- Holzfäller
+- Kochen
+- Handwerk für den Bau von Hofobjekten wie Straßen und Fackeln
+- Kampf
 
 ### Später geplante Berufe und Tätigkeiten
 
-- Kämpfen
 - Fischen
 - Verzauberung
 - weitere Berufe nach Bedarf
@@ -148,16 +150,22 @@ Ein Kampfsystem wird später ergänzt. Die übrigen Systeme dürfen deshalb nich
 
 Berufe erhalten durch ihre aktive Benutzung Erfahrungspunkte.
 
+Erfahrung wird ausschließlich für vollständig abgeschlossene Tätigkeiten vergeben. Einzelne Schläge oder begonnene, aber nicht fertiggestellte Aktionen geben keine Erfahrung.
+
 Beispiele:
 
-- Bergbau erhält Erfahrung durch das Abbauen geeigneter Vorkommen.
-- Holzfällen erhält Erfahrung durch das Fällen oder Bearbeiten von Holzquellen.
-- Landwirtschaft erhält Erfahrung durch landwirtschaftliche Tätigkeiten.
-- Schmieden erhält Erfahrung durch das Herstellen oder Bearbeiten geeigneter Gegenstände.
+- Bergbau erhält Erfahrung, wenn ein Stein oder Erzvorkommen vollständig abgebaut wurde.
+- Holzfäller erhält Erfahrung, wenn ein Baum vollständig gefällt wurde.
+- Landwirtschaft erhält Erfahrung, wenn eine erntereife Pflanze erfolgreich geerntet wurde.
+- Schmied, Kochen, Handwerk und Kampf erhalten später Erfahrung beim Abschluss ihrer jeweiligen Tätigkeit.
+
+Für die ersten Tests geben das Fällen eines Baums, der vollständige Abbau eines Steins oder Erzvorkommens und die erfolgreiche Kartoffelernte jeweils **10 Erfahrungspunkte**. Auch die vorbereiteten Werte der übrigen Berufe beginnen bei 10. Jeder Tätigkeitswert bleibt einzeln im Inspector anpassbar.
 
 ### Geplanter Levelbereich
 
 Berufe sollen zunächst von **Level 1 bis Level 50** aufsteigen können.
+
+Die vorläufige Testschwelle beträgt **100 Erfahrungspunkte pro Level**. Basiswert und zusätzliche Erfahrung pro Level sind im Inspector getrennt einstellbar; die endgültige Erfahrungskurve wird erst nach Spieltests festgelegt.
 
 ### Beispiel: Bergbau
 
@@ -356,6 +364,43 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
 - Ein gültiges Feld zählt für die Energiekosten auch dann mit, wenn die Aktion seinen Zustand nicht mehr verändert, beispielsweise beim erneuten Bewässern eines bereits nassen Feldes.
 - Sind sämtliche Zielfelder ungültig, wird keine Aktion ausgeführt und keine Energie verbraucht.
 - Das Bewässern eines leeren Ackerfeldes setzt dessen Drei-Tage-Zähler nicht zurück. Nur eine vorhandene Pflanze verhindert das automatische Zurücksetzen zu normalem Boden.
+
+### Pflanzen-Grundregeln
+
+- Saatgut kann sowohl auf trockenem als auch auf bewässertem Ackerboden ausgesät werden.
+- Eine Pflanze wächst am Tagesbeginn nur dann um einen Wachstumstag weiter, wenn ihr Feld am vorherigen Tag bewässert wurde.
+- Wird eine Pflanze nicht gegossen, pausiert ihr Wachstum für diesen Tag.
+- Nach **drei aufeinanderfolgenden trockenen Tagen** verdirbt die Pflanze und wächst nicht weiter.
+- Ein späterer bewässerter Tag setzt die laufende Zählung trockener Tage wieder auf null, solange die Pflanze noch nicht verdorben ist.
+- Nach der Ernte bleibt das Feld als Ackerboden bestehen. Es muss nicht erneut mit der Hacke bearbeitet werden.
+- Ob der bestehende Ackerboden nach der Ernte trocken oder bewässert ist, bleibt unverändert.
+- Konkrete Pflanzenarten, Wachstumszeiten, Erntemengen, Jahreszeiten und Grafiken werden später als austauschbare Pflanzendaten eingetragen.
+- Die erste Testpflanze ist die **Kartoffel**. Sie wächst im Frühling und benötigt **vier bewässerte Wachstumstage**.
+- Eine erntereife Kartoffelpflanze liefert bei der Ernte zufällig **eine bis drei Kartoffeln**.
+- Kartoffelsaatgut wird aus der Aktionsleiste mit der linken Maustaste auf das markierte Feld direkt vor dem Spieler gesät.
+- Eine erntereife Pflanze auf dem Feld direkt vor dem Spieler wird mit **E** geerntet.
+
+### Ressourcenabbau
+
+- Bäume werden mit der Axt bearbeitet. Ein Testbaum benötigt mit der Kupferaxt **8 Schläge** und liefert **3 Holz**.
+- Steine und Erzvorkommen werden mit der Spitzhacke bearbeitet.
+- Ein Teststein benötigt mit der Kupferspitzhacke **6 Schläge** und liefert **2 Stein**.
+- Ein Test-Erzvorkommen benötigt mit der Kupferspitzhacke **7 Schläge** und liefert **1 Erz**.
+- Bronze benötigt jeweils einen Schlag weniger als Kupfer, Eisen zwei und Stahl drei Schläge weniger.
+- Die Energiekosten pro Schlag betragen weiterhin 5 für Kupfer, 4 für Bronze, 3 für Eisen und 2 für Stahl.
+- Abgebaute Bäume, Steine und Erzvorkommen erscheinen nach **3 vollständigen Spieltagen** erneut.
+- Beim vollständigen Abbau wird die erhaltene Ressource als Bodenbeute an der Position des Vorkommens abgelegt.
+- Trefferstand und verbleibende Wiedererscheinungstage sind für spätere Spielstände vorbereitet.
+
+### Bodenbeute
+
+- Bodenbeute wird automatisch aufgenommen, sobald sich der Spieler auf **48 Pixel** nähert. Diese anfängliche Entfernung bleibt im Inspector anpassbar.
+- Reicht der freie Inventarplatz nur für einen Teil des Stapels, wird nur diese Menge aufgenommen. Der Rest bleibt unverändert auf dem Boden.
+- Ist das Inventar vollständig gefüllt, bleibt die gesamte Beute auf dem Boden liegen.
+- Gleiche Gegenstände innerhalb von **32 Pixeln** verbinden sich automatisch bis zur jeweiligen maximalen Stapelgröße.
+- Mengen oberhalb der maximalen Stapelgröße bilden einen weiteren Bodenstapel.
+- Nicht aufgenommene Bodenbeute verschwindet beim nächsten Tagesbeginn.
+- Bodenbeute besitzt eigene Daten für spätere Spielstände, damit sie beim Speichern während desselben Tages erhalten werden kann.
 
 ## 10. Welt und Areale
 

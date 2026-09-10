@@ -165,10 +165,19 @@ func _shows_target_marker() -> bool:
 
 func _get_target_offsets() -> Array[Vector2i]:
 	var offsets: Array[Vector2i] = []
-	if not _shows_target_marker() or _player == null:
+	if active_tool == null or _player == null:
 		return offsets
 
 	var forward := _player.facing_direction
+	if (
+		active_tool.tool_type == ToolData.ToolType.AXE
+		or active_tool.tool_type == ToolData.ToolType.PICKAXE
+	):
+		offsets.append(forward)
+		return offsets
+	if not _shows_target_marker():
+		return offsets
+
 	var right := Vector2i(-forward.y, forward.x)
 	var depth := 1
 	var half_width := 0

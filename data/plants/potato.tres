@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlantData" format=3]
+
+[ext_resource type="Script" path="res://scripts/farming/plant_data.gd" id="1_plant"]
+
+[resource]
+script = ExtResource("1_plant")
+plant_id = &"potato"
+display_name = "Kartoffel"
+seed_item_id = &"potato_seed"
+harvest_item_id = &"potato"
+growth_days = 4
+minimum_harvest_amount = 1
+maximum_harvest_amount = 3
+allowed_seasons = Array[int]([0])

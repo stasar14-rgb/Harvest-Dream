@@ -3,6 +3,7 @@ extends Node2D
 
 signal soil_cell_changed(cell: Vector2i)
 signal soil_cell_removed(cell: Vector2i)
+signal previous_day_soil_state_ready(watered_cells: Array[Vector2i])
 signal soil_action_completed(tool: ToolData, affected_cells: int, energy_cost: float)
 signal soil_action_rejected(message: String)
 
@@ -186,6 +187,7 @@ func _on_day_started(
 	_was_forced_sleep: bool
 ) -> void:
 	var cells_to_remove: Array[Vector2i] = []
+	var watered_cells: Array[Vector2i] = []
 
 	for cell_key in _soil_cells:
 		var cell: Vector2i = cell_key
@@ -193,6 +195,8 @@ func _on_day_started(
 		if state == null:
 			continue
 
+		if state.watered:
+			watered_cells.append(cell)
 		state.watered = false
 		if state.has_plant:
 			state.days_without_plant = 0
@@ -207,6 +211,7 @@ func _on_day_started(
 		_soil_cells.erase(cell)
 		soil_cell_removed.emit(cell)
 
+	previous_day_soil_state_ready.emit(watered_cells)
 	queue_redraw()
 
 func _draw() -> void:

@@ -52,6 +52,9 @@ func _unhandled_input(event: InputEvent) -> void:
 func is_inventory_open() -> bool:
 	return inventory_panel.visible
 
+func show_message(message: String) -> void:
+	_show_message(message)
+
 func _set_inventory_open(is_open: bool) -> void:
 	inventory_panel.visible = is_open
 	if _calendar == null:

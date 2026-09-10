@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=18 format=3]
 
 [ext_resource type="Script" path="res://scripts/areas/game_area.gd" id="1_area"]
 [ext_resource type="PackedScene" path="res://scenes/areas/spawn_point.tscn" id="2_spawn_point"]
@@ -6,6 +6,15 @@
 [ext_resource type="Script" path="res://scripts/debug_time_display.gd" id="4_debug_time"]
 [ext_resource type="PackedScene" path="res://scenes/interactions/interactable.tscn" id="5_interactable"]
 [ext_resource type="Script" path="res://scripts/farming/soil_system.gd" id="6_soil_system"]
+[ext_resource type="Script" path="res://scripts/farming/plant_system.gd" id="7_plant_system"]
+[ext_resource type="Script" path="res://scripts/farming/plant_data.gd" id="8_plant_data"]
+[ext_resource type="Resource" path="res://data/plants/potato.tres" id="9_potato_plant"]
+[ext_resource type="Script" path="res://scripts/resources/resource_system.gd" id="10_resource_system"]
+[ext_resource type="Script" path="res://scripts/resources/harvestable_resource.gd" id="11_harvestable"]
+[ext_resource type="Resource" path="res://data/resources/tree.tres" id="13_tree"]
+[ext_resource type="Resource" path="res://data/resources/stone.tres" id="14_stone"]
+[ext_resource type="Resource" path="res://data/resources/ore.tres" id="15_ore"]
+[ext_resource type="Script" path="res://scripts/items/ground_item_system.gd" id="16_ground_items"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_horizontal"]
 size = Vector2(1280, 16)
@@ -68,6 +77,37 @@ polygon = PackedVector2Array(0, 0, 1280, 0, 1280, 720, 0, 720)
 z_index = 1
 script = ExtResource("6_soil_system")
 tillable_area = Rect2i(2, 2, 36, 18)
+
+[node name="PlantSystem" type="Node2D" parent="." groups=["plant_system"]]
+z_index = 2
+script = ExtResource("7_plant_system")
+available_plants = Array[ExtResource("8_plant_data")]([ExtResource("9_potato_plant")])
+
+[node name="GroundItemSystem" type="Node2D" parent="." groups=["ground_item_system"]]
+z_index = 4
+script = ExtResource("16_ground_items")
+
+[node name="ResourceSystem" type="Node2D" parent="." groups=["resource_system"]]
+z_index = 3
+script = ExtResource("10_resource_system")
+
+[node name="TestTree" type="Node2D" parent="ResourceSystem"]
+position = Vector2(336, 240)
+script = ExtResource("11_harvestable")
+resource_instance_id = &"test_tree"
+resource_data = ExtResource("13_tree")
+
+[node name="TestStone" type="Node2D" parent="ResourceSystem"]
+position = Vector2(400, 240)
+script = ExtResource("11_harvestable")
+resource_instance_id = &"test_stone"
+resource_data = ExtResource("14_stone")
+
+[node name="TestOre" type="Node2D" parent="ResourceSystem"]
+position = Vector2(464, 240)
+script = ExtResource("11_harvestable")
+resource_instance_id = &"test_ore"
+resource_data = ExtResource("15_ore")
 
 [node name="LeftTransitionVisual" type="Polygon2D" parent="."]
 color = Color(0.15, 0.65, 1, 0.35)

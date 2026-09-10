@@ -17,7 +17,7 @@ const ACTION_BAR_SLOTS := 10
 
 ## Fügt beim Start einige Kataloggegenstände ein, damit die Inventarbedienung auf der Testfläche geprüft werden kann.
 @export var add_debug_starting_items: bool = true
-## Legt fünf Werkzeuge zum Prüfen der Werkzeug- und Bodenaktionen direkt in die ersten Plätze der Aktionsleiste.
+## Legt Werkzeuge und Kartoffelsaatgut zum Prüfen direkt in die ersten Plätze der Aktionsleiste.
 @export var add_debug_starting_tools: bool = true
 ## Goldkosten der beiden Taschenerweiterungen. Der Wert -1 bedeutet, dass der Preis noch nicht festgelegt wurde.
 @export var bag_upgrade_costs: Array[int] = [-1, -1]
@@ -51,6 +51,9 @@ func _ready() -> void:
 		_set_debug_action_tool(2, &"watering_can_iron")
 		_set_debug_action_tool(3, &"watering_can_steel")
 		_set_debug_action_tool(4, &"shovel")
+		_set_debug_action_item(5, &"potato_seed")
+		_set_debug_action_tool(6, &"axe_copper")
+		_set_debug_action_tool(7, &"pickaxe_copper")
 
 func get_inventory_capacity() -> int:
 	return STARTING_INVENTORY_SLOTS + purchased_bag_upgrades * SLOTS_PER_UPGRADE
@@ -104,6 +107,14 @@ func remove_item(item_id: StringName, amount: int) -> bool:
 	slots_changed.emit(INVENTORY_CONTAINER)
 	slots_changed.emit(ACTION_BAR_CONTAINER)
 	return remaining == 0
+
+func consume_action_slot_item(slot_index: int, item_id: StringName, amount: int = 1) -> bool:
+	var slot := get_slot(ACTION_BAR_CONTAINER, slot_index)
+	if slot == null or slot.item_id != item_id or amount <= 0 or slot.amount < amount:
+		return false
+	slot.set_stack(item_id, slot.amount - amount)
+	slots_changed.emit(ACTION_BAR_CONTAINER)
+	return true
 
 func get_item_amount(item_id: StringName) -> int:
 	var total := 0
@@ -293,10 +304,13 @@ func _find_first_empty_slot(slots: Array[InventorySlot], excluded_index: int = -
 	return null
 
 func _set_debug_action_tool(slot_index: int, item_id: StringName) -> void:
+	_set_debug_action_item(slot_index, item_id)
+
+func _set_debug_action_item(slot_index: int, item_id: StringName) -> void:
 	if slot_index < 0 or slot_index >= action_bar_slots.size():
-		push_error("Ungültiger Testplatz für Werkzeug '%s'." % item_id)
+		push_error("Ungültiger Testplatz für Gegenstand '%s'." % item_id)
 		return
 	if not _item_database.has_item(item_id):
-		push_error("Testwerkzeug '%s' fehlt im Gegenstandskatalog." % item_id)
+		push_error("Testgegenstand '%s' fehlt im Gegenstandskatalog." % item_id)
 		return
 	action_bar_slots[slot_index].set_stack(item_id, 1)
