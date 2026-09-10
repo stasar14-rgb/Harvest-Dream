@@ -26,7 +26,18 @@
 [ext_resource type="Resource" path="res://data/items/potato_seed.tres" id="24_potato_seed"]
 [ext_resource type="Resource" path="res://data/items/potato.tres" id="25_potato"]
 [ext_resource type="Resource" path="res://data/items/stone.tres" id="26_stone"]
+[ext_resource type="Resource" path="res://data/items/tin_ore.tres" id="27_tin_ore"]
+[ext_resource type="Resource" path="res://data/items/iron_ore.tres" id="28_iron_ore"]
+[ext_resource type="Resource" path="res://data/items/coal.tres" id="29_coal"]
+[ext_resource type="Resource" path="res://data/items/silver_ore.tres" id="30_silver_ore"]
+[ext_resource type="Resource" path="res://data/items/gold_ore.tres" id="31_gold_ore"]
+[ext_resource type="Resource" path="res://data/items/copper_bar.tres" id="32_copper_bar"]
+[ext_resource type="Resource" path="res://data/items/bronze_bar.tres" id="33_bronze_bar"]
+[ext_resource type="Resource" path="res://data/items/iron_bar.tres" id="34_iron_bar"]
+[ext_resource type="Resource" path="res://data/items/steel_bar.tres" id="35_steel_bar"]
+[ext_resource type="Resource" path="res://data/items/silver_bar.tres" id="36_silver_bar"]
+[ext_resource type="Resource" path="res://data/items/gold_bar.tres" id="37_gold_bar"]
 
 [resource]
 script = ExtResource("1_catalog")
-items = Array[ExtResource("2_item_data")]([ExtResource("3_wood"), ExtResource("4_ore"), ExtResource("5_berries"), ExtResource("6_axe_copper"), ExtResource("7_axe_bronze"), ExtResource("8_axe_iron"), ExtResource("9_axe_steel"), ExtResource("10_pickaxe_copper"), ExtResource("11_pickaxe_bronze"), ExtResource("12_pickaxe_iron"), ExtResource("13_pickaxe_steel"), ExtResource("14_hoe_copper"), ExtResource("15_hoe_bronze"), ExtResource("16_hoe_iron"), ExtResource("17_hoe_steel"), ExtResource("18_watering_can_copper"), ExtResource("19_watering_can_bronze"), ExtResource("20_watering_can_iron"), ExtResource("21_watering_can_steel"), ExtResource("22_shovel"), ExtResource("23_sickle"), ExtResource("24_potato_seed"), ExtResource("25_potato"), ExtResource("26_stone")])
+items = Array[ExtResource("2_item_data")]([ExtResource("3_wood"), ExtResource("4_ore"), ExtResource("5_berries"), ExtResource("6_axe_copper"), ExtResource("7_axe_bronze"), ExtResource("8_axe_iron"), ExtResource("9_axe_steel"), ExtResource("10_pickaxe_copper"), ExtResource("11_pickaxe_bronze"), ExtResource("12_pickaxe_iron"), ExtResource("13_pickaxe_steel"), ExtResource("14_hoe_copper"), ExtResource("15_hoe_bronze"), ExtResource("16_hoe_iron"), ExtResource("17_hoe_steel"), ExtResource("18_watering_can_copper"), ExtResource("19_watering_can_bronze"), ExtResource("20_watering_can_iron"), ExtResource("21_watering_can_steel"), ExtResource("22_shovel"), ExtResource("23_sickle"), ExtResource("24_potato_seed"), ExtResource("25_potato"), ExtResource("26_stone"), ExtResource("27_tin_ore"), ExtResource("28_iron_ore"), ExtResource("29_coal"), ExtResource("30_silver_ore"), ExtResource("31_gold_ore"), ExtResource("32_copper_bar"), ExtResource("33_bronze_bar"), ExtResource("34_iron_bar"), ExtResource("35_steel_bar"), ExtResource("36_silver_bar"), ExtResource("37_gold_bar")])

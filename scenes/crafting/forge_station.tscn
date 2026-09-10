@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/crafting/forge_station.gd" id="1_station"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_station"]
+size = Vector2(64, 64)
+
+[node name="ForgeStation" type="Area2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_station")
+interaction_name = "Schmiede öffnen"
+
+[node name="PlaceholderVisual" type="Polygon2D" parent="."]
+color = Color(0.46, 0.18, 0.12, 1)
+polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[node name="Highlight" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(-34, -34, 34, -34, 34, 34, -34, 34)
+width = 2.0
+default_color = Color(1, 0.85, 0.15, 1)
+closed = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_station")
