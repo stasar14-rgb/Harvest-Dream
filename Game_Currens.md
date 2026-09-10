@@ -342,8 +342,9 @@ Werkzeuge sollen als eigenständige Daten und nicht fest im Spieler-Code angeleg
 - Das Werkzeug im aktuell ausgewählten Aktionsleistenplatz ist das aktive Werkzeug. Ein leerer Platz oder ein normaler Gegenstand löst keine Werkzeugaktion aus.
 - Ein Wechsel des Aktionsleistenplatzes während des Aufladens bricht die laufende Aufladung ab.
 - Das Öffnen des Inventars verhindert Werkzeugaktionen.
-- Ist die **Hacke**, **Gießkanne** oder **Schaufel** ausgewählt, erscheint direkt vor dem Spieler eine sichtbare Zielmarkierung. Bei der Schaufel zeigt sie ein **32 × 32-Pixel-Rasterfeld**. Bei Hacke und Gießkanne zeigt sie abhängig von der Materialstufe alle Felder der jeweiligen Bearbeitungsfläche.
-- Alle drei Werkzeuge verwenden dasselbe allgemeine Zielfeldsystem. Die Markierung liegt unmittelbar am Feld des Spielers an und wechselt entsprechend seiner Blickrichtung nach oben, unten, links oder rechts.
+- Jedes ausgewählte Werkzeug zeigt seine tatsächlichen Zielfelder sichtbar an. Axt, Spitzhacke, Schaufel und Sichel markieren jeweils das einzelne **32 × 32-Pixel-Rasterfeld** direkt vor dem Spieler. Hacke und Gießkanne zeigen abhängig von Aufladung und Materialstufe alle Felder ihrer jeweiligen Bearbeitungsfläche.
+- Alle Werkzeuge verwenden dasselbe allgemeine Zielfeldsystem. Die Markierung liegt unmittelbar am Feld des Spielers an und wechselt entsprechend seiner Blickrichtung nach oben, unten, links oder rechts.
+- Die Werkzeug-Zielfeldanzeige ist beim Start sichtbar und kann jederzeit mit **K** vollständig aus- oder wieder eingeblendet werden. Das Umschalten verändert ausschließlich die Anzeige, nicht die tatsächliche Werkzeugwirkung.
 - Sie zeigt genau das Feld beziehungsweise bei Hacke und Gießkanne alle Felder an, die beim nächsten Einsatz bearbeitet werden:
   - Hacke: angezeigte Fläche als Ackerboden bearbeiten
   - Gießkanne: angezeigte Fläche bewässern

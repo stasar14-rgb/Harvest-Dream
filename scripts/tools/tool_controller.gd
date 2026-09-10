@@ -4,6 +4,7 @@ extends Node2D
 signal active_tool_changed(tool: ToolData)
 signal charge_level_changed(charge_level: int, field_count: int)
 signal tool_use_requested(tool: ToolData, target_positions: Array[Vector2], base_energy_cost: float)
+signal target_display_changed(is_visible: bool)
 
 ## Größe eines Feldes im Raster der Spielwelt.
 @export_range(1, 256, 1) var grid_size: int = 32
@@ -17,6 +18,8 @@ signal tool_use_requested(tool: ToolData, target_positions: Array[Vector2], base
 @export var target_border_color: Color = Color(1.0, 0.85, 0.15, 0.95)
 ## Breite des sichtbaren Rahmens um jedes Zielfeld.
 @export_range(1.0, 8.0, 0.5) var target_border_width: float = 2.0
+## Zeigt die tatsächlichen Zielfelder aller Werkzeuge an. Im Spiel kann die Anzeige mit K umgeschaltet werden.
+@export var show_tool_hitboxes: bool = true
 
 var active_tool: ToolData
 var _inventory_system: InventorySystem
@@ -69,6 +72,16 @@ func _process(delta: float) -> void:
 	queue_redraw()
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.is_echo():
+		return
+
+	if event.is_action_pressed(&"toggle_tool_hitboxes"):
+		show_tool_hitboxes = not show_tool_hitboxes
+		target_display_changed.emit(show_tool_hitboxes)
+		queue_redraw()
+		get_viewport().set_input_as_handled()
+		return
+
 	if event.is_action_pressed(&"use_tool"):
 		if _is_input_blocked() or active_tool == null:
 			return
@@ -155,13 +168,7 @@ func _is_input_blocked() -> bool:
 	return _inventory_ui != null and _inventory_ui.is_inventory_open()
 
 func _shows_target_marker() -> bool:
-	if active_tool == null:
-		return false
-	return (
-		active_tool.tool_type == ToolData.ToolType.HOE
-		or active_tool.tool_type == ToolData.ToolType.WATERING_CAN
-		or active_tool.tool_type == ToolData.ToolType.SHOVEL
-	)
+	return show_tool_hitboxes and active_tool != null
 
 func _get_target_offsets() -> Array[Vector2i]:
 	var offsets: Array[Vector2i] = []
@@ -174,8 +181,6 @@ func _get_target_offsets() -> Array[Vector2i]:
 		or active_tool.tool_type == ToolData.ToolType.PICKAXE
 	):
 		offsets.append(forward)
-		return offsets
-	if not _shows_target_marker():
 		return offsets
 
 	var right := Vector2i(-forward.y, forward.x)
