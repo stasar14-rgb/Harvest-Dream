@@ -222,7 +222,7 @@ func load_forge_data(data: Dictionary) -> void:
 	_resize_storage()
 	for slot in storage_slots:
 		slot.clear()
-	var stored_items_value := data.get("storage", [])
+	var stored_items_value: Variant = data.get("storage", [])
 	if stored_items_value is Array:
 		var stored_items: Array = stored_items_value
 		for index in mini(stored_items.size(), storage_slots.size()):
@@ -235,7 +235,7 @@ func load_forge_data(data: Dictionary) -> void:
 				storage_slots[index].set_stack(item_id, amount)
 
 	_queue.clear()
-	var queue_value := data.get("queue", [])
+	var queue_value: Variant = data.get("queue", [])
 	if queue_value is Array:
 		var saved_queue: Array = queue_value
 		for entry_value in saved_queue:
