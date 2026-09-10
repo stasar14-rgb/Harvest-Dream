@@ -115,6 +115,7 @@ Ein einzelner Gegenstand kann seine Standard-Stapelgröße überschreiben. Quali
 - Die Goldkosten der beiden Erweiterungen werden später festgelegt.
 - Das Inventar wird auf dem PC mit **B** geöffnet und geschlossen.
 - Die Aktionsleiste kann mit den Zahlentasten **1 bis 9 und 0** sowie mit der Maus ausgewählt werden.
+- Für die aktuelle Testfläche beginnt die Aktionsleiste ausschließlich mit: **1 Kupferaxt, 2 Kupferspitzhacke, 3 Kupferhacke, 4 Kupfergießkanne, 5 Schaufel und 6 Kartoffelsaatgut**. Die übrigen vier Plätze bleiben leer.
 - Gegenstände können mit gedrückter linker Maustaste zwischen Inventar- und Aktionsleistenplätzen verschoben werden.
 - **Umschalt + linke Maustaste** verschiebt einen vollständigen Stapel automatisch in den nächsten verfügbaren Platz des jeweils anderen Bereichs.
 - **Umschalt + rechte Maustaste** teilt einen Stapel zur Hälfte und legt den abgetrennten Teil in den nächsten freien Platz desselben Bereichs.
