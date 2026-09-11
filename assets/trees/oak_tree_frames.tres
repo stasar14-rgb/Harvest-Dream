@@ -1,0 +1,80 @@
+[gd_resource type="SpriteFrames" load_steps=17 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/trees/oak_growth_3_stages.png" id="1_growth"]
+[ext_resource type="Texture2D" path="res://assets/trees/oak_hit_shake_4_frames.png" id="2_shake"]
+[ext_resource type="Texture2D" path="res://assets/trees/oak_fall_right_6_frames.png" id="3_fall"]
+
+[sub_resource type="AtlasTexture" id="Atlas_growth_0"]
+atlas = ExtResource("1_growth")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_growth_1"]
+atlas = ExtResource("1_growth")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_growth_2"]
+atlas = ExtResource("1_growth")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_shake_0"]
+atlas = ExtResource("2_shake")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_shake_1"]
+atlas = ExtResource("2_shake")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_shake_2"]
+atlas = ExtResource("2_shake")
+region = Rect2(128, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_shake_3"]
+atlas = ExtResource("2_shake")
+region = Rect2(192, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_fall_0"]
+atlas = ExtResource("3_fall")
+region = Rect2(0, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_fall_1"]
+atlas = ExtResource("3_fall")
+region = Rect2(128, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_fall_2"]
+atlas = ExtResource("3_fall")
+region = Rect2(256, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_fall_3"]
+atlas = ExtResource("3_fall")
+region = Rect2(384, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_fall_4"]
+atlas = ExtResource("3_fall")
+region = Rect2(512, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_fall_5"]
+atlas = ExtResource("3_fall")
+region = Rect2(640, 0, 128, 96)
+
+[resource]
+animations = [{
+"frames": [{"duration": 1.0, "texture": SubResource("Atlas_fall_0")}, {"duration": 1.0, "texture": SubResource("Atlas_fall_1")}, {"duration": 1.0, "texture": SubResource("Atlas_fall_2")}, {"duration": 1.0, "texture": SubResource("Atlas_fall_3")}, {"duration": 1.0, "texture": SubResource("Atlas_fall_4")}, {"duration": 1.0, "texture": SubResource("Atlas_fall_5")}],
+"loop": false,
+"name": &"fall_right",
+"speed": 8.0
+}, {
+"frames": [{"duration": 1.0, "texture": SubResource("Atlas_growth_0")}, {"duration": 1.0, "texture": SubResource("Atlas_growth_1")}, {"duration": 1.0, "texture": SubResource("Atlas_growth_2")}],
+"loop": false,
+"name": &"grow",
+"speed": 2.0
+}, {
+"frames": [{"duration": 1.0, "texture": SubResource("Atlas_shake_0")}, {"duration": 1.0, "texture": SubResource("Atlas_shake_1")}, {"duration": 1.0, "texture": SubResource("Atlas_shake_2")}, {"duration": 1.0, "texture": SubResource("Atlas_shake_3")}],
+"loop": false,
+"name": &"hit_shake",
+"speed": 10.0
+}, {
+"frames": [{"duration": 1.0, "texture": SubResource("Atlas_growth_2")}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]

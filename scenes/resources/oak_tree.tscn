@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/oak_tree.gd" id="1_oak_tree"]
+[ext_resource type="Resource" path="res://data/resources/tree.tres" id="2_tree_data"]
+[ext_resource type="SpriteFrames" path="res://assets/trees/oak_tree_frames.tres" id="3_tree_frames"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trunk"]
+size = Vector2(18, 20)
+
+[node name="OakTree" type="Node2D"]
+script = ExtResource("1_oak_tree")
+resource_data = ExtResource("2_tree_data")
+
+[node name="TreeSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-32, -96)
+centered = false
+sprite_frames = ExtResource("3_tree_frames")
+animation = &"idle"
+
+[node name="TrunkBody" type="StaticBody2D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrunkBody"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_trunk")

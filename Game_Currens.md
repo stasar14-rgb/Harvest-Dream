@@ -583,6 +583,13 @@ Die Gesamtgröße eines Sprite-Sheets ist nicht fest vorgegeben. Die einzelnen F
 - Gegenstände und kleine Effekte: 32×32 px pro Frame
 - Bäume: 64×96 px pro Frame
 
+### Einheitliche Konturfarbe
+
+- Jedes neu erstellte Spiel-Asset erhält an seiner äußeren sichtbaren Silhouette einen schwarzen Rand.
+- Für diesen Rand wird immer exakt dieselbe, vollständig deckende Farbe verwendet: **#000000** (RGB 0, 0, 0).
+- Für den Rand dürfen keine abweichenden Dunkelgrau-, Braun- oder halbtransparenten Farbtöne verwendet werden.
+- Der Hintergrund freigestellter Assets bleibt vollständig transparent, damit die Motive sauber ausgeschnitten und im Spiel eingesetzt werden können.
+
 ### Verwendete Standardgrößen
 
 Für das Grundspiel werden zunächst nur diese Standardgrößen verwendet:
